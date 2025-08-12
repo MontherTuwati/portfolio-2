@@ -1,0 +1,157 @@
+'use client';
+import { cn } from '@/lib/utils';
+import { useState } from 'react';
+import { MoveUpRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
+
+const COLORS = [
+  'bg-yellow-500 text-black',
+  'bg-blue-500 text-white',
+  'bg-teal-500 text-black',
+  'bg-indigo-500 text-white',
+];
+
+const MENU_LINKS = [
+  {
+    name: 'Home',
+    url: '/',
+  },
+  {
+    name: 'About Me',
+    url: '/#about-me',
+  },
+  {
+    name: 'Experience',
+    url: '/#my-experience',
+  },
+  {
+    name: 'Projects',
+    url: '/#selected-projects',
+  },
+];
+
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+
+  return (
+    <>
+      {/* Header with logo + hamburger */}
+      <header className="sticky top-0 z-50 flex w-full items-center justify-between px-4 py-1 md:px-8 md:py-1">
+        <Link href="/" passHref>
+          <Image
+            src="/logo/mt-logo.svg"
+            alt="MT Logo"
+            width={60}
+            height={60}
+            className="m-4 md:m-10 transition-all duration-300 hover:scale-150 hover:rotate-10 hover:brightness-125"
+          />
+        </Link>
+
+        <button
+          className="md:hidden text-white p-2 focus:outline-none"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          <div className="w-6 h-0.5 bg-white mb-1.5 transition-all duration-300 ease-in-out"></div>
+          <div className="w-6 h-0.5 bg-white mb-1.5 transition-all duration-300 ease-in-out"></div>
+          <div className="w-6 h-0.5 bg-white transition-all duration-300 ease-in-out"></div>
+        </button>
+      </header>
+
+      {/* Fancy animated hamburger on desktop */}
+      <div className="hidden md:block sticky top-0 z-[4]">
+        <button
+          className={cn('group size-12 absolute top-5 right-5 md:right-10 z-[2]')}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span
+            className={cn(
+              'inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 -translate-y-[5px]',
+              {
+                'rotate-45 -translate-y-1/2': isMenuOpen,
+                'md:group-hover:rotate-12': !isMenuOpen,
+              },
+            )}
+          ></span>
+          <span
+            className={cn(
+              'inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 translate-y-[5px]',
+              {
+                '-rotate-45 -translate-y-1/2': isMenuOpen,
+                'md:group-hover:-rotate-12': !isMenuOpen,
+              },
+            )}
+          ></span>
+        </button>
+      </div>
+
+      {/* Dark overlay */}
+      <div
+        className={cn(
+          'overlay fixed inset-0 z-[2] bg-black/70 transition-all duration-150',
+          {
+            'opacity-0 invisible pointer-events-none': !isMenuOpen,
+          },
+        )}
+        onClick={() => setIsMenuOpen(false)}
+      ></div>
+
+      {/* Side menu */}
+      <div
+        className={cn(
+          'fixed top-0 right-0 h-[100dvh] w-[500px] max-w-[calc(100vw-3rem)] transform translate-x-full transition-transform duration-700 z-[3] overflow-hidden gap-y-14',
+          'flex flex-col lg:justify-center py-10',
+          { 'translate-x-0': isMenuOpen },
+        )}
+      >
+        <div
+          className={cn(
+            'fixed inset-0 scale-150 translate-x-1/2 rounded-[50%] bg-background-light duration-700 delay-150 z-[-1]',
+            {
+              'translate-x-0': isMenuOpen,
+            },
+          )}
+        ></div>
+
+        <div className="grow flex md:items-center w-full max-w-[300px] mx-8 sm:mx-auto">
+          <div className="flex gap-10 lg:justify-between max-lg:flex-col w-full">
+            <div>
+              <p className="text-muted-foreground mb-5 md:mb-8">MENU</p>
+              <ul className="space-y-3">
+                {MENU_LINKS.map((link, idx) => (
+                  <li key={link.name}>
+                    <button
+                      onClick={() => {
+                        router.push(link.url);
+                        setIsMenuOpen(false);
+                      }}
+                      className="group text-xl flex items-center gap-3"
+                    >
+                      <span
+                        className={cn(
+                          'size-3.5 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-[200%] transition-all',
+                          COLORS[idx],
+                        )}
+                      >
+                        <MoveUpRight
+                          size={8}
+                          className="scale-0 group-hover:scale-100 transition-all"
+                        />
+                      </span>
+                      {link.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Navbar;
