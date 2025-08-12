@@ -59,9 +59,13 @@ export const Carousel = ({
   };
 
   // Get the card width and gap based on viewport size
+  const getCardWidth = () => {
+    const firstChild = carouselRef.current?.children[0] as HTMLElement | undefined;
+    return firstChild?.getBoundingClientRect().width ?? 420;
+  };
+
   const getScrollDistance = () => {
-    // Card width (w-56 = 224px) + gap-4 (16px)
-    const cardWidth = 224;
+    const cardWidth = getCardWidth();
     const gap = 16;
     const totalWidth = cardWidth + gap;
 
@@ -90,8 +94,8 @@ export const Carousel = ({
 
   const handleCardClose = (index: number) => {
     if (carouselRef.current) {
-      const cardWidth = 224; // w-56 (224px)
-      const gap = isMobile() ? 16 : 16; // gap-4 (16px)
+      const cardWidth = getCardWidth();
+      const gap = 16;
       const scrollPosition = (cardWidth + gap) * index;
       carouselRef.current.scrollTo({
         left: scrollPosition,
@@ -99,10 +103,6 @@ export const Carousel = ({
       });
       setCurrentIndex(index);
     }
-  };
-
-  const isMobile = () => {
-    return window && window.innerWidth < 768;
   };
 
   return (
@@ -183,7 +183,7 @@ export const Card = ({
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
+  const { onCardClose } = useContext(CarouselContext);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -202,7 +202,7 @@ export const Card = ({
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [open]);
 
-  //@ts-ignore
+  // @ts-expect-error - useOutsideClick types not aligned
   useOutsideClick(containerRef, () => handleClose());
 
   const handleOpen = () => {
