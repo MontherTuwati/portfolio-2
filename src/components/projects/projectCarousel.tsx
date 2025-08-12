@@ -276,7 +276,7 @@ export const Card = ({
         {/*<div className="absolute inset-0 z-20 cursor-pointer bg-black/20 hover:bg-black/2" />*/}
         <div className="relative z-40 p-8">
           <motion.p
-            layoutId={layout ? `category-${card.category}` : undefined}
+            layoutId={layout ? `category-${card.title}` : undefined}
             className="text-left font-sans text-sm font-medium text-white md:text-base"
           >
             {card.category}
