@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from 'next/navigation';
 // Import the Link component from next/link
 import Link from 'next/link';
+import { Dock, DockIcon } from "@/components/ui/Dock";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { gilroy } from "@/fonts/fonts";
@@ -97,32 +98,31 @@ export default function RootLayout({
         <Navbar />
         {children} {/* This is where your page content (like page.tsx) will be rendered */}
 
-        {/* Sticky Social Media Container */}
-        {/* Positioned fixed to the bottom right */}
-        {/* Added responsive padding, rounded corners, border, and background */}
-        <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 bg-black/60 border border-white/[.30] border-dashed rounded-full p-2 md:p-4 flex flex-col items-center space-y-7 md:space-y-5">
+        {/* Social Dock */}
+        <Dock
+          className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 bg-black/60 border border-white/[.30] border-dashed"
+          direction="bottom"
+        >
           {socialLinks.map((link) => (
             // Link for each social media icon
             <Link
               key={link.platform}
               href={link.href}
-              target="_blank" // Open link in new tab
-              rel="noopener noreferrer" // Security best practice for target="_blank"
-              // Added hover effects
-              className="transition-transform duration-200 hover:scale-110"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {/* Social media icon image */}
-              <Image
-                src={link.iconPath} // Use the icon path from the socialLinks array
-                alt={`${link.platform} icon`}
-                // Adjusted icon size responsively
-                width={20} // Base size for mobile
-                height={20} // Base size for mobile
-                className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 object-contain" // Responsive size and object-contain
-              />
+              <DockIcon className="bg-transparent">
+                <Image
+                  src={link.iconPath}
+                  alt={`${link.platform} icon`}
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-contain"
+                />
+              </DockIcon>
             </Link>
           ))}
-        </div>
+        </Dock>
         {/* End Sticky Social Media Container */}
       </body>
     </html>
