@@ -58,9 +58,10 @@ export const Carousel = ({
     }
   };
 
-  // Get the card width and gap based on viewport size
   const getCardWidth = () => {
-    const firstChild = carouselRef.current?.children[0] as HTMLElement | undefined;
+    const firstChild = carouselRef.current?.children[0] as
+      | HTMLElement
+      | undefined;
     return firstChild?.getBoundingClientRect().width ?? 420;
   };
 
@@ -68,8 +69,6 @@ export const Carousel = ({
     const cardWidth = getCardWidth();
     const gap = 16;
     const totalWidth = cardWidth + gap;
-
-    // Scroll by 2 cards on desktop, 1 on mobile
     const cardsToScroll = 1;
     return totalWidth * cardsToScroll;
   };
@@ -124,7 +123,7 @@ export const Carousel = ({
           <div
             className={cn(
               'flex flex-row justify-start gap-4',
-              'mx-auto max-w-7xl' // remove max-w-4xl if you want the carousel to span the full width of its container
+              'mx-auto max-w-7xl'
             )}
           >
             {items.map((item, index) => (
@@ -187,27 +186,31 @@ export const Card = ({
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        handleClose();
-      }
+      if (event.key === 'Escape') handleClose();
     }
+
+    const html = document.documentElement;
 
     if (open) {
       document.body.style.overflow = 'hidden';
+      html.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
+      html.style.overflow = '';
     }
 
     window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = '';
+      html.style.overflow = '';
+    };
   }, [open]);
 
   // @ts-expect-error - useOutsideClick types not aligned
   useOutsideClick(containerRef, () => handleClose());
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  const handleOpen = () => setOpen(true);
 
   const handleClose = () => {
     setOpen(false);
@@ -218,23 +221,31 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 z-52 h-screen overflow-auto">
+          // BACKDROP WRAPPER: prevent page scroll here
+          <div className="fixed inset-0 z-[52] h-screen overflow-hidden">
+            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg"
+              className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg overscroll-none"
             />
+            {/* MODAL: the only scrollable area */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="relative z-[60] mx-auto my-10 h-fit max-w-5xl overflow-y-auto max-h-[calc(100vh-5rem)] rounded-3xl bg-white font-sans dark:bg-neutral-900"
+              className="relative z-[60] mx-auto my-10 h-fit max-w-5xl max-h-[calc(100vh-5rem)]
+                         overflow-y-auto overscroll-contain rounded-3xl bg-white font-sans
+                         dark:bg-neutral-900 touch-pan-y"
+              // stop wheel/touch bubbling to the page
+              onWheelCapture={(e) => e.stopPropagation()}
+              onTouchMoveCapture={(e) => e.stopPropagation()}
             >
               {/* Sticky close button */}
-              <div className="sticky top-4 z-52 flex justify-end px-8 pt-8 md:px-14 md:pt-8">
+              <div className="sticky top-4 z-[52] flex justify-end px-8 pt-8 md:px-14 md:pt-8">
                 <button
                   className="flex h-8 w-8 items-center justify-center rounded-full bg-black/90 shadow-md dark:bg-white/90"
                   onClick={handleClose}
@@ -243,7 +254,7 @@ export const Card = ({
                 </button>
               </div>
 
-              {/* Header section with consistent padding */}
+              {/* Header */}
               <div className="relative px-8 pt-2 pb-0 md:px-14">
                 <div>
                   <motion.p
@@ -261,19 +272,19 @@ export const Card = ({
                 </div>
               </div>
 
-              {/* Content with consistent padding */}
+              {/* Content */}
               <div className="px-8 pt-8 pb-14 md:px-14">{card.content}</div>
             </motion.div>
           </div>
         )}
       </AnimatePresence>
+
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-[520px] w-[420px] flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900"
+        className="relative z-10 flex h-[624px] w-[504px] flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900"
       >
         <div className="absolute inset-x-0 top-0 z-30 h-full cursor-pointer bg-gradient-to-b from-black hover:scale-110 via-transparent to-transparent" />
-        {/*<div className="absolute inset-0 z-20 cursor-pointer bg-black/20 hover:bg-black/2" />*/}
         <div className="relative z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.title}` : undefined}
