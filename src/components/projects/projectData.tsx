@@ -1,13 +1,11 @@
 import Image from 'next/image';
-import { Image as Img } from 'lucide-react';
 import { ChevronRight, Link } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
-import { url } from 'inspector';
 
 // Enhanced project content array with all projects
 const PROJECT_CONTENT = [
   {
-    title: 'Project 1',
+    title: 'Synto',
     description:
       'Synto is an AI-powered interface that transforms complex blockchain interactions into simple, natural language commands. Whether you want to send tokens, stake assets, swap coins, or even create NFTs or liquidity pools, just tell Synto what to do — no manual wallet interactions, no technical jargon. One of my biggest projects yet',
     techStack: [
@@ -52,27 +50,27 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/synto1.png',
+        src: '/project-imgs/projectOne.png',
         alt: 'Synto landing page',
       },
       {
-        src: '/synto2.png',
+        src: '/project-imgs/projectTwo.png',
         alt: 'Synto chat interface',
       },
       {
-        src: '/synto3.png',
+        src: '/project-imgs/projectThree.png',
         alt: 'Synto chat interface',
       },
       {
-        src: '/synto4.png',
+        src: '/project-imgs/projectFour.png',
         alt: 'Synto chat interface',
       },
       {
-        src: '/synto5.png',
+        src: '/project-imgs/projectFive.png',
         alt: 'Synto chat interface',
       },
       {
-        src: '/synto6.png',
+        src: '/project-imgs/projectSix.png',
         alt: 'Synto chat interface',
       },
     ],
@@ -95,15 +93,15 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/rrate1.png',
+        src: '/project-imgs/projectOne.png',
         alt: 'Rrate landing page',
       },
       {
-        src: '/rrate2.png',
+        src: '/project-imgs/projectTwo.png',
         alt: 'Rrate comparison page',
       },
       {
-        src: '/rrate3.png',
+        src: '/project-imgs/projectThree.png',
         alt: 'Rrate comparison page',
       },
     ],
@@ -140,19 +138,19 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/defai1.png',
+        src: '/project-imgs/projectFour.png',
         alt: 'Landing Page of Defai',
       },
       {
-        src: '/defai2.png',
+        src: '/project-imgs/projectFive.png',
         alt: 'Confirmation popup of Defai',
       },
       {
-        src: '/defai3.png',
+        src: '/project-imgs/projectSix.png',
         alt: 'Chatbot of Defai',
       },
       {
-        src: '/defai4.jpeg',
+        src: '/project-imgs/projectOne.jpeg',
         alt: 'Winner team',
       },
     ],
@@ -171,11 +169,11 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/fitgear2.png',
+        src: '/project-imgs/projectTwo.png',
         alt: 'Fitgear chatbot',
       },
       {
-        src: '/fitgear1.png',
+        src: '/project-imgs/projectThree.png',
         alt: 'Fitgear landing page',
       },
     ],
@@ -204,19 +202,19 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/datai1.png',
+        src: '/project-imgs/projectFour.png',
         alt: 'Datai landing page',
       },
       {
-        src: '/datai2.png',
+        src: '/project-imgs/projectFive.png',
         alt: 'Datai chatbot',
       },
       {
-        src: '/datai3.png',
+        src: '/project-imgs/projectSix.png',
         alt: 'Datai chatbot',
       },
       {
-        src: '/datai4.png',
+        src: '/project-imgs/projectone.png',
         alt: 'Datai chatbot',
       }
     ],
@@ -235,27 +233,27 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/trans1.png',
+        src: '/project-imgs/projectOne.png',
         alt: 'Transcendance landing page',
       },
       {
-        src: '/trans2.png',
+        src: '/project-imgs/projectTwo.png',
         alt: 'Transcendance game',
       },
       {
-        src: '/trans3.png',
+        src: '/project-imgs/projectThree.png',
         alt: 'Transcendance game',
       },
       {
-        src: '/trans4.png',
+        src: '/project-imgs/projectFour.png',
         alt: 'Transcendance game',
       },
       {
-        src: '/trans5.png',
+        src: '/project-imgs/projectFive.png',
         alt: 'Transcendance game',
       },
       {
-        src: '/trans6.png',
+        src: '/project-imgs/projectSix.png',
         alt: 'Transcendance game',
       }
 
@@ -298,11 +296,11 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/youbot1.jpg',
+        src: '/project-imgs/projectTwo.png',
         alt: 'Youbot landing page',
       },
       {
-        src: '/youbot2.png',
+        src: '/project-imgs/projectThree.png',
         alt: 'Youbot chatbot',
       },
     ],
@@ -325,11 +323,11 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/oldport1.png',
+        src: '/project-imgs/projectTwo.png',
         alt: 'Old Portfolio landing page',
       },
       {
-        src: '/oldport2.png',
+        src: '/project-imgs/projectOne.png',
         alt: 'Old Portfolio projects',
       }
     ],
