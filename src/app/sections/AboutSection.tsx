@@ -3,10 +3,21 @@ import BlurText from "@/components/ui/TextAnimations/BlurText/BlurText";
 import TiltedCard from "@/components/ui/TiltedCard";
 import SkillTag from "@/components/SkillTag";
 
-const devSkills = [
-  'Next.js', 'Tailwind', 'React', 'Javascript', 'CSS', 'Node.js',
-  'Python', 'Springboot', 'Flutterflow', 'Firebase', 'Supabase', 'MySQL'
-];
+const devStack = {
+  Languages: [
+    'Java', 'Python', 'TypeScript', 'JavaScript', 'C++', 'C#', 'PHP', 'HTML/CSS'
+  ],
+  Frameworks: [
+    'React', 'React Native', 'Vue.js', 'Next.js', 'Laravel', 'Tailwind',
+    'Electron.js', 'Express.js', 'Django', 'Bootstrap', 'Node.js', 'Spring', 'MySQL', 'PostgreSQL',
+    'MongoDB', 'SQLite', 'Redis'
+  ],
+  Tools: [
+    'Git', 'Docker', 'Azure', 'Firebase', 'Google Cloud',
+    'VS Code', 'PyCharm', 'Eclipse'
+  ]
+};
+
 
 const contentSkills = [
   'Figma', 'Canva', 'Unity', 'Unreal Engine', 'Godot', 'Adobe Premiere Pro', 'Adobe Photoshop', 'Adobe Illustrator'
@@ -26,9 +37,24 @@ export default function AboutSection() {
           <p className="text-gray-400 md:text-md text-sm mt-2 leading-relaxed mb-5">
             Started creating mobile applications using Flutter, FlutterFlow, and Firebase and eventually switched to Web Development using NextJS, React, and Tailwind
           </p>
-          <h4 className="text-cyan-300 font-semibold mb-3 text-base">Skillset &amp; tools</h4>
-          <div className="flex flex-wrap gap-2">
-            {devSkills.map(skill => <SkillTag key={skill} skillName={skill} />)}
+          
+          <div className="mb-4">
+            <h4 className="text-cyan-300 font-semibold mb-3 text-base">Languages</h4>
+            <div className="flex flex-wrap gap-2">
+              {devStack.Languages.map(language => <SkillTag key={language} skillName={language} />)}
+            </div>
+          </div>
+          <div className="mb-4">
+            <h4 className="text-cyan-300 font-semibold mb-3 text-base">Frameworks & Backend</h4>
+            <div className="flex flex-wrap gap-2">
+              {devStack.Frameworks.map(framework => <SkillTag key={framework} skillName={framework} />)}
+            </div>
+          </div>
+          <div className="mb-4">
+            <h4 className="text-cyan-300 font-semibold mb-3 text-base">Tools</h4>
+            <div className="flex flex-wrap gap-2">
+              {devStack.Tools.map(tool => <SkillTag key={tool} skillName={tool} />)}
+            </div>
           </div>
         </div>
 

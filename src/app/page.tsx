@@ -36,7 +36,7 @@ export default function Home() {
         {/* Experience Section */}
         <div className="flex w-full items-center justify-center p-4 md:mt-25 mt-5">
           <BlurText
-            text=" My Experience"
+            text=" My Journey"
             delay={150}
             animateBy="words"
             direction="top"

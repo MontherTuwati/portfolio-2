@@ -10,44 +10,64 @@ const experiences = [
   // ... your experiences array - Keep this array as is
   {
     id: 1,
-    title: 'Student Trainee',
-    company: 'Datacom',
-    year: '2015',
-    description: 'Attended a three-month workshop at DATACOM during my younger years, where we were taught about the fundamentals of MS Excel, the proficiency of keyboarding, and the main components of a computer system.',
-    logo: '/exp_logos/datacom.svg',
+    title: 'Computer Science & Robotics Club',
+    company: 'Robert Thirsk High School',
+    year: '2018',
+    description: 'Participated in the school’s CS & Robotics Club, gaining early exposure to programming, hardware fundamentals, and collaborative project work.',
+    logo: '/exp_logos/robertthirsk.png',
   },
   {
     id: 2,
     title: 'Junior Data Analyst / Core Technician',
     company: 'McEwen Mining Inc.',
-    year: 'Sept. 2022 - May 2023',
-    description: 'One of the external scholars of the Security Bank Corporation. Inside this, we are tasked with attending related seminars and maintaining grades on our academic standings.',
+    year: 'Sept. 2022 – May 2023',
+    description: [
+      'Recoded and adapted existing Python scripts to automate the core scanner workflow for each new data batch. ',
+      'Uploaded geological scan data to a remote centralized database for further analysis by distributed teams. ',
+      'Reduced system downtime by 20% through performance monitoring and proactive technical support.'
+    ],
     logo: '/exp_logos/mcewen-logo.svg',
   },
   {
     id: 3,
-    title: 'Freelance Software Developer',
-    company: 'Ozone Telecom',
-    year: 'May 2023 - Dec. 2023',
-    description: `As the head of the committee, I am in charge of developing new plans and events for the student body while collaborating with my members. We ensure that we give the best experience to the students academically. That's why we also receive and assess students' concerns around the campus.`,
+    title: 'Intern Software Developer',
+    company: 'Ozon Telecom',
+    year: 'May 2023 – Dec. 2023',
+    description: [
+      'Contributed to the development of a Bar-code/QR-based Attendance System using Electron.js and Node.js, enhancing attendance tracking for 500+ employees. ',
+      'Contributed to building the HRMS with Next.js, React.js, MongoDB for employee management. ',
+      'Improved MySQL backend performance by 12.5% through query optimization. ',
+      'Provided technical support to ensure the seamless integration of the HRMS and Attendance System across departments. '
+    ],
     logo: '/exp_logos/ozon-logo.svg',
   },
   {
     id: 4,
-    title: 'Software Engineer II',
+    title: 'Software Engineer I',
     company: 'Sabratha, Ministry of Education',
-    year: 'Nov. 2023 - Nov. 2024',
-    description: `Holding the distinction of being one of the few chosen Notion Campus Leaders globally, my role is to drive the adoption and skillful utilization of Notion among users, especially students. This involves creating and leading campaigns, events, and initiatives designed to meet Notion's strategic goals.`,
+    year: 'Nov. 2023 – Nov. 2024',
+    description: [
+      'Co-developed a School Information System (SIS) using Laravel used by 10,000+ students across schools. ',
+      'Improved data access speed by 18% through optimized MySQL and MongoDB schema design. ',
+      'Enforced data integrity and compliance during system audits through secure backend architecture. ',
+      'Collaborated remotely across departments to test and deploy critical system updates.'
+    ],
     logo: '/exp_logos/sab-uni.svg',
   },
   {
     id: 5,
-    title: 'Web Developer',
-    company: 'Joes Auto Body',
-    year: 'Jan. 2025 - Present',
-    description: 'As a DataCamp Scholar, I am privileged to be part of a select group of students who have been recognized for their outstanding performance and potential in the field of data science. This recognition underscores my commitment to advancing my skills and knowledge in this dynamic field.',
+    title: 'Full Stack Developer',
+    company: 'Joe’s Auto Body',
+    year: 'Jan. 2025 – Present',
+    description: [
+      'Built and launched a dynamic 5-page website using Next.js and Tailwind CSS, optimizing performance across desktop and mobile. ',
+      'Developed a fully customized Strapi CMS enabling client-side control over vehicle listings, bookings, and customer inquiries. ',
+      'Integrated real-time booking system with Google Calendar sync and email notifications, streamlining service scheduling. ',
+      'Built a used vehicle marketplace with advanced filtering and admin inventory control.'
+    ],
     logo: '/exp_logos/joes-logo.svg',
   },
+
 ];
 
 const ExperienceTimeline: React.FC = () => {
