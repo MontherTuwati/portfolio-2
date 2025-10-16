@@ -54,14 +54,14 @@ export default function HeroSection() {
   return (
     <div>
         {/* Hero Section */}
-        <div className="mb-20">
+        <div className="mb-10">
           <h1 className="text-9xl font-bold leading-none mb-6">
             <span className="text-white">SOFTWARE</span>
             <br />
             <span className="text-gray-600">ENGINEER</span>
           </h1>
           <p className="text-gray-400 text-2xl leading-relaxed max-w-3xl">
-            Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.
+          Love crafting software that solves meaningful problems. <br /> Turn ideas into scalable, maintainable solutions. <br /> Blend precision, performance, and innovation in every build.
           </p>
         </div>
 
