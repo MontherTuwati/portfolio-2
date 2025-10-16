@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import TiltedCard from "@/components/ui/TiltedCard";
 import HeroSection from "./sections/HeroSection";
 import AboutSection from "./sections/AboutSection";
@@ -8,8 +8,19 @@ import ExperienceTimeline from "./sections/ExperienceTimeline";
 import AllProjects from "./sections/ProjectsSection";
 import ContactSection from "./sections/ContactSection";
 import FooterSection from "./sections/FooterSection";
+import LoadingAnimation from "@/components/ui/LoadingAnimation";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
+  if (isLoading) {
+    return <LoadingAnimation onComplete={handleLoadingComplete} />;
+  }
+
   return (
     <main className="min-h-screen font-poppins text-white">
       {/* Two Column Layout - Only for main content sections */}
