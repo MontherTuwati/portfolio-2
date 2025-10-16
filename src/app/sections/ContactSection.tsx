@@ -1,150 +1,97 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import BlurText from '@/components/ui/TextAnimations/BlurText/BlurText'; 
-import Squares from '@/components/ui/Backgrounds/Squares/Squares';
-
-// Define contact details
-const contactInfo = {
-  email: "monthertuwati@gmail.com",
-};
-
-const socialLinks = [
-  { platform: "GitHub", href: "https://github.com/monthertuwati", iconPath: "/icons/github_icon.svg" },
-  { platform: "LinkedIn", href: "https://www.linkedin.com/in/monthertuwati/", iconPath: "/icons/linkedin_icon.svg" },
-  { platform: "Gmail", href: "mailto:monthertuwati@gmail.com", iconPath: "/icons/gmail_icon.svg" },
-];
+import React, { useState } from 'react';
 
 export default function ContactSection() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
-    const form = event.currentTarget;
-    const formData = new FormData(form);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
-    const name = formData.get('name')?.toString() || '';
-    const email = formData.get('email')?.toString() || '';
-    const subject = formData.get('subject')?.toString() || '';
-    const message = formData.get('message')?.toString() || '';
-
-    const emailBody = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-    const encodedSubject = encodeURIComponent(subject);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Create mailto link with form data
+    const emailBody = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
     const encodedBody = encodeURIComponent(emailBody);
+    const mailtoLink = `mailto:monthertuwati@gmail.com?subject=New Contact Form Submission&body=${encodedBody}`;
 
-    const mailtoLink = `mailto:${contactInfo.email}?subject=${encodedSubject}&body=${encodedBody}`;
     window.location.href = mailtoLink;
   };
 
   return (
-    <section className="relative py-20 px-6 sm:px-10 lg:px-20 overflow-hidden z-10">
-      {/* Squares background only in this section */}
-      <div className="absolute inset-0 z-[-1] opacity-15">
-        <Squares 
-          speed={0.5}
-          squareSize={50}
-          direction="diagonal"
-          borderColor="#fff"
-          hoverFillColor="#222"
-        />
-      </div>
-
+    <div className="mt-20 mb-20">
       {/* Section Title */}
-      <div className="text-center mb-12 md:mb-16">
-        <BlurText
-          text="Get In Touch"
-          delay={50}
-          animateBy="letters"
-          direction="top"
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center"
-        />
-      </div>
-
-      {/* Contact Info + Form */}
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 z-10 relative">
-        {/* Contact Info */}
-        <div className="flex flex-col space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Contact Information</h2>
-          <div className="flex items-center text-white/80">
-            <span className="mr-2 text-cyan-500">📧</span>
-            <a href={`mailto:${contactInfo.email}`} className="hover:underline text-base sm:text-lg">
-              {contactInfo.email}
-            </a>
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4">Connect with Me</h3>
-            <div className="flex space-x-4">
-              {socialLinks.map(link => (
-                <Link
-                  key={link.platform}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform duration-200 hover:scale-110"
-                >
-                  <Image
-                    src={link.iconPath}
-                    alt={`${link.platform} icon`}
-                    width={30}
-                    height={30}
-                    className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
-                  />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
+      <h1 className="text-9xl font-bold leading-none mb-16">
+        <span className="text-white">LET'S WORK</span>
+        <br />
+        <span className="text-gray-600">TOGETHER</span>
+      </h1>
 
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+      <form onSubmit={handleSubmit} className="max-w-2xl space-y-8">
+        {/* Name and Email Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <label htmlFor="name" className="block text-white/80 text-sm font-medium mb-1">Name</label>
+            <label htmlFor="name" className="block text-white text-sm font-medium mb-3">Name</label>
             <input
               type="text"
               id="name"
               name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              placeholder="Your Name"
               required
-              className="w-full px-3 py-2 bg-[#1a1b1c] border border-white/[.15] rounded-md text-white focus:ring-cyan-500 focus:border-cyan-500"
+              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors"
             />
           </div>
+          
           <div>
-            <label htmlFor="email" className="block text-white/80 text-sm font-medium mb-1">Email</label>
+            <label htmlFor="email" className="block text-white text-sm font-medium mb-3">Email</label>
             <input
               type="email"
               id="email"
               name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              placeholder="Your@email.com"
               required
-              className="w-full px-3 py-2 bg-[#1a1b1c] border border-white/[.15] rounded-md text-white focus:ring-cyan-500 focus:border-cyan-500"
+              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors"
             />
           </div>
-          <div>
-            <label htmlFor="subject" className="block text-white/80 text-sm font-medium mb-1">Subject</label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              className="w-full px-3 py-2 bg-[#1a1b1c] border border-white/[.15] rounded-md text-white focus:ring-cyan-500 focus:border-cyan-500"
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-white/80 text-sm font-medium mb-1">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              required
-              className="w-full px-3 py-2 bg-[#1a1b1c] border border-white/[.15] rounded-md text-white focus:ring-cyan-500 focus:border-cyan-500"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full px-4 py-2 bg-cyan-600 text-white font-bold rounded-md hover:bg-cyan-700 transition duration-200"
-          >
-            Send Message
-          </button>
+        </div>
+
+        {/* Message Textarea */}
+        <div>
+          <label htmlFor="message" className="block text-white text-sm font-medium mb-3">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleInputChange}
+            placeholder="Message"
+            rows={6}
+            required
+            className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors resize-none"
+          />
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="w-full px-6 py-4 bg-orange-500 text-white font-bold text-lg rounded-lg hover:bg-orange-600 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+        >
+          Submit
+        </button>
         </form>
-      </div>
-    </section>
+    </div>
   );
 }

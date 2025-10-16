@@ -1,87 +1,222 @@
 'use client';
-import React from 'react';
-import Image from 'next/image';
-import BlurText from '@/components/ui/TextAnimations/BlurText/BlurText';
-import TrueFocus from '@/components/ui/TextAnimations/TrueFocus/TrueFocus';
-import CircularText from '@/components/ui/TextAnimations/CircularText/CircularText';
-import Squares from '@/components/ui/Backgrounds/Squares/Squares';
-import Particles from '@/components/ui/Backgrounds/Particles';
+
+import React, { useState } from "react";
+import CountUp from "@/components/ui/TextAnimations/CountUp/CountUp";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function HeroSection() {
-  const handleAnimationComplete = () => {
-    console.log('Animation completed!');
+  const [expandedCard, setExpandedCard] = useState<string | null>(null);
+
+  const frontendSkills = [
+    "React", "Next.js", "React Native", "Vue.js", 
+    "Flutter", "Laravel", "JavaScript", "CSS3"
+  ];
+
+  const backendSkills = [
+    "Node.js", "Django", "Express.js", "PostgreSQL", 
+    "MongoDB", "REST APIs", "GraphQL", "Docker"
+  ];
+
+  const toggleCard = (cardType: string) => {
+    setExpandedCard(expandedCard === cardType ? null : cardType);
+  };
+
+  const cardVariants = {
+    collapsed: {
+      height: "8rem",
+      transition: { duration: 0.5, ease: "easeInOut" }
+    },
+    expanded: {
+      height: "auto",
+      transition: { duration: 0.5, ease: "easeInOut" }
+    }
+  };
+
+  const skillVariants = {
+    hidden: { opacity: 0, y: 20, scale: 0.8 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    })
+  };
+
+  const arrowVariants = {
+    collapsed: { rotate: 0 },
+    expanded: { rotate: 90 }
   };
 
   return (
-    <section className="relative w-full h-full pt-20 overflow-hidden">
-        {/* Particles background only in this section */}
-        <div style={{ width: '100%', height: '600px', position: 'absolute' }}>
-            <Particles
-                particleColors={['#ffffff', '#ffffff']}
-                particleCount={200}
-                particleSpread={10}
-                speed={0.1}
-                particleBaseSize={100}
-                moveParticlesOnHover={false}
-                alphaParticles={false}
-                disableRotation={false}
-            />
-        </div>
-        <div className="w-full flex justify-center items-center my-4 text-center font-bold relative px-4">
-          <BlurText
-            text="Monther Tuwati"
-            delay={150}
-            animateBy="letters"
-            direction="top"
-            onAnimationComplete={handleAnimationComplete}
-            className="lg:text-9xl md:text-7xl text-4xl"
-          />
+    <div>
+        {/* Hero Section */}
+        <div className="mb-20">
+          <h1 className="text-9xl font-bold leading-none mb-6">
+            <span className="text-white">SOFTWARE</span>
+            <br />
+            <span className="text-gray-600">ENGINEER</span>
+          </h1>
+          <p className="text-gray-400 text-2xl leading-relaxed max-w-3xl">
+            Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.
+          </p>
         </div>
 
-        <div className="font-bold text-center opacity-0 animate-fadeIn mt-3">
-          <TrueFocus
-            sentence="Developer   Father   Passion"
-            manualMode
-            blurAmount={5}
-            borderColor="cyan"
-            animationDuration={0.3}
-            pauseBetweenAnimations={1}
-          />
+        {/* Statistics Section */}
+        <div className="flex justify-start items-start gap-12 mb-16">
+          <div className="text-left">
+            <div className="text-8xl font-bold text-white mb-2">
+              +<CountUp
+                from={0}
+                to={3}
+                direction="up"
+                duration={1.5}
+                className="count-up-text"
+              />
+            </div>
+            <div className="text-gray-400 text-2xl leading-tight">
+              YEARS OF<br/>EXPERIENCE
+            </div>
+          </div>
+          <div className="text-left">
+            <div className="text-8xl font-bold text-white mb-2">
+              +<CountUp
+                from={0}
+                to={26}
+                direction="up"
+                duration={2}
+                className="count-up-text"
+              />
+            </div>
+            <div className="text-gray-400 text-2xl leading-tight">
+              PROJECTS<br/>COMPLETED
+            </div>
+          </div>
+          <div className="text-left">
+            <div className="text-8xl font-bold text-white mb-2">
+              +<CountUp
+                from={0}
+                to={43}
+                direction="up"
+                duration={2.5}
+                className="count-up-text"
+              />
+            </div>
+            <div className="text-gray-400 text-2xl leading-tight">
+              WORLDWIDE<br/>CLIENTS
+            </div>
+          </div>
         </div>
 
-        <div className="w-full items-center mt-8 relative h-[300px] hidden md:block">
-          <CircularText
-            text="SCROLL-DOWN*SCROLL-DOWN*"
-            onHover="slowDown"
-            spinDuration={5}
-            className="absolute left-45 bottom-10"
-          />
-          <Image
-            src="/logo/mt-logo.svg"
-            alt="MT Logo"
-            width={50}
-            height={45}
-            className="m-10 transition-all duration-300 hover:scale-150 hover:rotate-10 hover:brightness-125 absolute left-40 bottom-5"
-          />
+        {/* Skill Cards */}
+        <div className="grid grid-cols-2 w-full max-w-4xl gap-8">
+          {/* Frontend Card */}
+          <motion.div 
+            className="bg-orange-500 rounded-2xl p-6 relative overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
+            onClick={() => toggleCard('frontend')}
+            variants={cardVariants}
+            animate={expandedCard === 'frontend' ? 'expanded' : 'collapsed'}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <div className="absolute top-4 left-4 w-10 h-10 bg-orange-300 rounded-lg flex items-center justify-center">
+              <i className="fas fa-code text-gray-800 text-lg"></i>
+            </div>
+            <h3 className="text-white font-bold text-xl mt-12 leading-tight">FRONTEND<br/>DEVELOPMENT</h3>
+            <motion.div 
+              className="absolute bottom-4 right-4"
+              variants={arrowVariants}
+              animate={expandedCard === 'frontend' ? 'expanded' : 'collapsed'}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <i className="fas fa-arrow-right text-gray-800 text-lg"></i>
+            </motion.div>
+            
+            {/* Expanded Skills */}
+            <AnimatePresence>
+              {expandedCard === 'frontend' && (
+                <motion.div 
+                  className="mt-6 pt-4 border-t border-orange-300/30"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  <div className="grid grid-cols-2 gap-2">
+                    {frontendSkills.map((skill, index) => (
+                      <motion.div 
+                        key={skill}
+                        className="bg-gray-800/20 text-white text-sm px-3 py-2 rounded-lg text-center font-medium"
+                        variants={skillVariants}
+                        initial="hidden"
+                        animate="visible"
+                        custom={index}
+                        whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+                      >
+                        {skill}
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+          
+          {/* Backend Card */}
+          <motion.div 
+            className="bg-gray-800 border border-gray-800 rounded-2xl p-6 relative overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
+            onClick={() => toggleCard('backend')}
+            variants={cardVariants}
+            animate={expandedCard === 'backend' ? 'expanded' : 'collapsed'}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <div className="absolute top-4 left-4 w-10 h-10 bg-gray-600 rounded-lg flex items-center justify-center">
+              <i className="fas fa-server text-orange-500 text-lg"></i>
+            </div>
+            <h3 className="text-white font-bold text-xl mt-12 leading-tight">BACKEND<br/>DEVELOPMENT</h3>
+            <motion.div 
+              className="absolute bottom-4 right-4"
+              variants={arrowVariants}
+              animate={expandedCard === 'backend' ? 'expanded' : 'collapsed'}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <i className="fas fa-arrow-right text-orange-500 text-lg"></i>
+            </motion.div>
+            
+            {/* Expanded Skills */}
+            <AnimatePresence>
+              {expandedCard === 'backend' && (
+                <motion.div 
+                  className="mt-6 pt-4 border-t border-gray-600/30"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  <div className="grid grid-cols-2 gap-2">
+                    {backendSkills.map((skill, index) => (
+                      <motion.div 
+                        key={skill}
+                        className="bg-orange-500/20 text-white text-sm px-3 py-2 rounded-lg text-center font-medium"
+                        variants={skillVariants}
+                        initial="hidden"
+                        animate="visible"
+                        custom={index}
+                        whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 107, 53, 0.3)" }}
+                      >
+                        {skill}
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
         </div>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fadeIn {
-          animation: fadeIn 1s ease-out forwards;
-          animation-delay: 0.8s;
-        }
-      `}</style>
-    </section>
+    </div>
   );
 }

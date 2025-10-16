@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        poppins: ['var(--font-poppins)'],
         gilroy: ['var(--font-gilroy)'],
         geist: ['var(--font-geist-sans)'],
         'geist-mono': ['var(--font-geist-mono)'],

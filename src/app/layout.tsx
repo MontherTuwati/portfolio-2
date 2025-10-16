@@ -6,11 +6,11 @@ import Image from "next/image";
 import { usePathname } from 'next/navigation';
 // Import the Link component from next/link
 import Link from 'next/link';
-import { Dock, DockIcon } from "@/components/ui/Dock";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import { gilroy } from "@/fonts/fonts";
-import Navbar from '@/components/Navbar';
+import StaggeredMenu from '@/components/ui/StaggeredMenu';
+import { Dock, DockIcon } from "@/components/ui/Dock";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // Define social media links and placeholder icon paths
 const socialLinks = [
@@ -19,15 +19,27 @@ const socialLinks = [
   { platform: "Gmail", href: "mailto:monthertuwati@gmail.com", iconPath: "/icons/gmail_icon.svg" }, // <-- Replace YOUR_EMAIL_ADDRESS and icon path
 ];
 
+// Define menu items for StaggeredMenu
+const menuItems = [
+  { label: 'Home', ariaLabel: 'Go to home section', link: 'home' },
+  { label: 'About', ariaLabel: 'Learn about Monther', link: 'about' },
+  { label: 'Experience', ariaLabel: 'View work experience', link: 'experience' },
+  { label: 'Projects', ariaLabel: 'See portfolio projects', link: 'projects' },
+  { label: 'Contact', ariaLabel: 'Get in touch', link: 'contact' }
+];
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// Define social items for StaggeredMenu
+const socialItems = [
+  { label: 'GitHub', link: 'https://github.com/monthertuwati', icon: 'fab fa-github' },
+  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/monthertuwati/', icon: 'fab fa-linkedin' },
+  { label: 'Gmail', link: 'mailto:monthertuwati@gmail.com', icon: 'fas fa-envelope' }
+];
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 // Metadata is for server components, so it stays outside the client component export
@@ -53,6 +65,8 @@ export default function RootLayout({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // Get current pathname
   const pathname = usePathname();
+  // Track active section
+  const [activeSection, setActiveSection] = useState('home');
 
   // --- Lenis Smooth Scrolling Implementation ---
   // Use useRef to hold the Lenis instance
@@ -88,42 +102,85 @@ export default function RootLayout({
   }, []); // Empty dependency array ensures this effect runs only once on mount and cleans up on unmount
   // --- End Lenis Implementation ---
 
+  // Smooth scroll to section function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element && lenis.current) {
+      lenis.current.scrollTo(element, {
+        offset: -100, // Offset for the fixed navbar
+        duration: 1.5,
+      });
+    }
+  };
+
+  // Handle menu item clicks
+  const handleMenuItemClick = (item: any) => {
+    scrollToSection(item.link);
+  };
+
+  // Intersection Observer to track active section
+  useEffect(() => {
+    const sections = ['home', 'about', 'experience', 'projects', 'contact'];
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px', // Trigger when section is 20% from top
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      sections.forEach((sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
+
   return (
     <html lang="en">
       <body
-        // Added bg-black class for black background
-        className={`${geistSans.variable} ${geistMono.variable} ${gilroy.variable} antialiased font-gilroy bg-black`}
-        >
-        {/* Header Section */}
-        <Navbar />
-        {children} {/* This is where your page content (like page.tsx) will be rendered */}
+        className={`${poppins.variable} antialiased font-poppins bg-[#1A1A1A]`}
+      >
+         {/* StaggeredMenu Navigation */}
+         <StaggeredMenu
+           position="right"
+           items={menuItems}
+           socialItems={socialItems}
+           displaySocials={true}
+           displayItemNumbering={true}
+           menuButtonColor="#fff"
+           openMenuButtonColor="#333"
+           changeMenuColorOnOpen={true}
+           colors={['#1A1A1A', '#2A2A2A']}
+           logoUrl="/logo/mt-logo.svg"
+           accentColor="#FF6B35"
+           isFixed={true}
+           onItemClick={handleMenuItemClick}
+           onMenuOpen={() => console.log('Menu opened')}
+           onMenuClose={() => console.log('Menu closed')}
+         />
 
-        {/* Social Dock */}
-        <Dock
-          className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 bg-black/60 border border-white/[.30] border-dashed"
-          direction="bottom"
-        >
-          {socialLinks.map((link) => (
-            // Link for each social media icon
-            <Link
-              key={link.platform}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <DockIcon className="bg-transparent">
-                <Image
-                  src={link.iconPath}
-                  alt={`${link.platform} icon`}
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-contain"
-                />
-              </DockIcon>
-            </Link>
-          ))}
-        </Dock>
-        {/* End Sticky Social Media Container */}
+        {children}
+
       </body>
     </html>
   );

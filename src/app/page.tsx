@@ -1,78 +1,66 @@
 "use client"
 
 import React from "react";
-import Image from "next/image";
-
-// Import your components and blocks
-// Removed GooeyNav import
-import BlurText from "@/components/ui/TextAnimations/BlurText/BlurText";
-import TrueFocus from "@/components/ui/TextAnimations/TrueFocus/TrueFocus";
-import CircularText from "@/components/ui/TextAnimations/CircularText/CircularText";
-// ScrollReveal is imported but not used in the provided code snippet, keep if used elsewhere
-// import ScrollReveal from "@/blocks/TextAnimations/ScrollReveal/ScrollReveal";
 import TiltedCard from "@/components/ui/TiltedCard";
-import ExperienceTimeline from '@/app/sections/ExperienceTimeline';
-import SkillTag from '@/components/SkillTag'; // Assuming SkillTag is in components folder
-import AllProjects from "@/app/sections/ProjectsSection";
-import ContactSection from '@/app/sections/ContactSection';
 import HeroSection from "./sections/HeroSection";
 import AboutSection from "./sections/AboutSection";
-
-const handleAnimationComplete = () => {
-  console.log('Animation completed!');
-};
+import ExperienceTimeline from "./sections/ExperienceTimeline";
+import AllProjects from "./sections/ProjectsSection";
+import ContactSection from "./sections/ContactSection";
+import FooterSection from "./sections/FooterSection";
 
 export default function Home() {
-  // Removed mobileMenuOpen state
   return (
-    // The cursor: 'none' style is now applied globally in layout.tsx
-    // Removed outer div as layout.tsx now handles the main structure
-    // <div className="flex flex-col min-h-screen bg-[#101112] font-gilroy"> // Removed this line
-    <> {/* Added React Fragment wrapper */}
-      {/* Main content area */}
-      <main className="flex-grow flex flex-col items-center h-full relative pt-10"> {/* Added padding top to account for fixed header */}
-        <HeroSection />
-        <AboutSection />
-        {/* Experience Section */}
-        <div className="flex w-full items-center justify-center p-4 md:mt-25 mt-5">
-          <BlurText
-            text=" My Journey"
-            delay={150}
-            animateBy="words"
-            direction="top"
-            onAnimationComplete={handleAnimationComplete}
-            className="md:text-7xl text-3xl font-extrabold"
-          />
-        </div>
-        <ExperienceTimeline />
-
-        <div className="flex w-full items-center justify-center p-4 md:mt-25 mt-5 font-extrabold">
-          <BlurText
-            text=" My Projects"
-            delay={150}
-            animateBy="letters"
-            direction="top"
-            onAnimationComplete={handleAnimationComplete}
-            className="md:text-7xl text-3xl font-extrabold"
-          />
+    <main className="min-h-screen font-poppins text-white">
+      {/* Two Column Layout - Only for main content sections */}
+      <div className="flex">
+        {/* Left Column - TiltedCard (only for main sections) */}
+        <div className="w-1/3 p-12 flex justify-center items-start">
+          <div className="hidden md:block sticky top-24 self-start">
+            <TiltedCard
+              imageSrc="/photos/tiltedcard.svg"
+              altText="MontherTuwati"
+              captionText="Monther Tuwati"
+              containerHeight="600px"
+              containerWidth="500px"
+              imageHeight="700px"
+              imageWidth="500px"
+              rotateAmplitude={10}
+              scaleOnHover={1.1}
+              showMobileWarning={false}
+              showTooltip={false}
+              displayOverlayContent={true}
+              overlayContent={
+                <p className="bg-transparent px-4 py-2 border-1 border-dashed rounded-lg opacity-50 font-bold m-5 absolute top-5 left-85">
+                  Monther Tuwati
+                </p>
+              }
+            />
+          </div>
         </div>
 
-        {/* Projects Section Start */}
-        {/* Modified this div to use a grid layout for two columns */}
-          <div className="w-full px-4 md:px-8 mt-10">
+        {/* Right Column - All Content Sections */}
+        <div className="w-2/3 p-12">
+          <div id="home">
+            <HeroSection />
+          </div>
+          <div id="about">
+            <AboutSection />
+          </div>
+          <div id="experience">
+            <ExperienceTimeline />
+          </div>
+          <div id="projects">
             <AllProjects />
           </div>
-        {/* Projects Section End */}
-
-        <ContactSection />
-      </main>
-
-
-      {/* Footer Section - Consider moving this to layout.tsx as well for consistency */}
-      <footer className="flex w-full items-center justify-center p-4 border-t border-white/[.15] text-white/50 text-sm font-light mt-20"> {/* Added margin top */}
-        <p>&copy; {new Date().getFullYear()} Monther Tuwati. All rights reserved.</p> {/* Updated name */}
-      </footer>
-    </> // Closed React Fragment wrapper
-    // </div> // Removed this closing tag
+          <div id="contact">
+            <ContactSection />
+          </div>
+        </div>
+      </div>
+      
+      {/* Full Width Footer */}
+      <FooterSection />
+    </main>
   );
 }
