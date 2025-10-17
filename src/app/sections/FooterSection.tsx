@@ -48,8 +48,9 @@ export default function FooterSection() {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
-              Passionate about creating intuitive and engaging user experiences. 
-              Specialize in transforming ideas into beautifully crafted products.
+            Love crafting software that solves meaningful problems. <br />
+            Turn ideas into scalable, maintainable solutions. <br />
+            Blend precision, performance, and innovation in every build.
             </p>
           </div>
 
