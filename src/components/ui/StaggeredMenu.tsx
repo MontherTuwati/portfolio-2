@@ -357,8 +357,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             alt="Logo"
             className="sm-logo-img"
             draggable={false}
-            width={110}
-            height={24}
+            width={165}
+            height={48}
           />
         </div>
         <button
@@ -427,6 +427,24 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           </ul>
           {displaySocials && socialItems && socialItems.length > 0 && (
             <div className="sm-socials" aria-label="Social links">
+              {/* Download Resume Button */}
+              <div className="mb-6">
+                <button
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/cv/Monther_CV.pdf';
+                    link.download = 'Monther_Tuwati_Resume.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
+                  className="w-full px-4 py-3 bg-transparent border-2 border-orange-500 text-orange-500 font-bold text-base rounded-lg hover:bg-orange-500 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-gray-800 flex items-center justify-center space-x-2"
+                >
+                  <i className="fas fa-download text-sm"></i>
+                  <span>Download Resume</span>
+                </button>
+              </div>
+
               <h3 className="sm-socials-title">Socials</h3>
               <ul className="sm-socials-list" role="list">
                 {socialItems.map((s, i) => (
