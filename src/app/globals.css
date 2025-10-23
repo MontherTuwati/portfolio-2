@@ -1,6 +1,3 @@
-/* globals.css */
-
-/* Keep your existing Tailwind import */
 @import "tailwindcss";
 
 /*
@@ -8,15 +5,32 @@
   Set the dark mode colors as the default in :root.
 */
 :root {
-  --background: #151312; /* Dark background color */
-  --foreground: #ededed; /* Light foreground color */
+  --background: #1A1A1A;
+  --foreground: #ffffff;
+  --card: #1A1A1A;
+  --card-foreground: #ffffff;
+  --popover: #1A1A1A;
+  --popover-foreground: #ffffff;
+  --primary: #ff6b35;
+  --primary-foreground: #ffffff;
+  --secondary: #2a2a2a;
+  --secondary-foreground: #ffffff;
+  --muted: #2a2a2a;
+  --muted-foreground: #9ca3af;
+  --accent: #ff6b35;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --border: #374151;
+  --input: #374151;
+  --ring: #ff6b35;
+  --radius: 0.5rem;
 }
 
 /* Keep your theme rule */
-:root inline {
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-gilroy), var(--font-geist-sans);
+  --font-sans: var(--font-poppins), var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -121,7 +135,7 @@
 
 .sm-logo-img {
   display: block;
-  height: 32px;
+  height: 48px;
   width: auto;
   object-fit: contain;
 }
@@ -441,7 +455,6 @@
   }
 }
 
-
 /*
   To get the Top-Right and Bottom-Left corners as well using this
   pseudo-element approach directly on the card div is not possible
@@ -456,16 +469,14 @@
   inside the card divs.
 */
 
-
 /* Keep your existing body styles and add position relative */
 body {
   /* These will now use the dark colors defined in :root */
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-gilroy), Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
   position: relative; /* Added for positioning context if needed */
+  background-color: #1A1A1A;
+  color: #ffffff;
 }
-
 
 /* Add the noise effect pseudo-element */
 body::after {
@@ -509,4 +520,14 @@ body::after {
 .scrollbar-hide {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
 }

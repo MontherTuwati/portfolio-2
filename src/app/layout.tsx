@@ -107,7 +107,7 @@ export default function RootLayout({
     const element = document.getElementById(sectionId);
     if (element && lenis.current) {
       lenis.current.scrollTo(element, {
-        offset: -100, // Offset for the fixed navbar
+        offset: -45, // No offset - scroll to exact top of section
         duration: 1.5,
       });
     }
