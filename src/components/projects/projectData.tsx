@@ -5,109 +5,88 @@ import { Separator } from '@/components/ui/separator';
 // Enhanced project content array with all projects
 const PROJECT_CONTENT = [
   {
-    title: 'Synto',
+    title: 'School Student Info System',
     description:
-      'Synto is an AI-powered interface that transforms complex blockchain interactions into simple, natural language commands. Whether you want to send tokens, stake assets, swap coins, or even create NFTs or liquidity pools, just tell Synto what to do — no manual wallet interactions, no technical jargon. One of my biggest projects yet',
+      'School SIS is a comprehensive Laravel-based Student Information System designed to manage all aspects of educational institution operations. It provides a complete solution for managing students, teachers, departments, courses, events, grades, attendance, library, financial tracking, and administrative tasks with role-based access control and comprehensive reporting features.',
     techStack: [
-      'Next.js',
-      'TailwindCSS',
-      'Web3.js',
-      'shadcn-ui',
+      'Laravel 11',
+      'PHP 8.3+',
+      'MySQL',
+      'Bootstrap 5',
+      'JavaScript',
+      'Chart.js',
+      'FontAwesome',
+    ],
+    date: '2023',
+    images: [
+      {
+        src: '/project-imgs/school-sis/school-sis-thumbnail.png',
+        alt: 'School Student Info System thumbnail',
+      },
+      {
+        src: '/project-imgs/school-sis/school-sis.jpg',
+        alt: 'School Student Info System',
+      },
+      {
+        src: '/project-imgs/school-sis/school-sis1.jpg',
+        alt: 'School Student Info System',
+      },
+      {
+        src: '/project-imgs/school-sis/school-sis2.jpg',
+        alt: 'School Student Info System',
+      },
+      {
+        src: '/project-imgs/school-sis/school-sis3.jpg',
+        alt: 'School Student Info System',
+      },
+      {
+        src: '/project-imgs/school-sis/school-sis4.jpg',
+        alt: 'School Student Info System',
+      },
+      {
+        src: '/project-imgs/school-sis/school-sis5.jpg',
+        alt: 'School Student Info System',
+      },
+      {
+        src: '/project-imgs/school-sis/school-sis6.jpg',
+        alt: 'School Student Info System',
+      },
+    ],
+  },
+  {
+    title: 'AntiScamurai',
+    description:
+      "AntiScamurai is a Discord bot that prevents scam bots from raiding servers by implementing advanced quarantine, verification, and moderation systems with a samurai theme. Features include automatic quarantine for new members, smart account detection, global reputation tracking, raid prevention, channel-based verification with advanced captcha systems, moderation tools, ticket system, and comprehensive statistics tracking.",
+    techStack: [
+      'Python',
       'TypeScript',
-      'Phantom Wallet',
-      'OpenAI API',
-      'Vercel AI SDK',
-      'Solana Agent kit',
-      'Neon',
-      'Prisma'
+      'Discord.js',
+      'Prisma',
+      'PostgreSQL',
+      'Node.js',
     ],
     date: '2025',
-    links: [
-      {
-        name: 'website',
-        url: 'https://synto.fun',
-      },
-      {
-        name: 'Launch Video',
-        url: 'https://www.youtube.com/watch?v=4QUE2KgKDUw',
-      },
-      {
-        name: 'X',
-        url: 'https://x.com/chainSynto',
-      },
-      {
-        name: 'Technical Video',
-        url: 'https://www.youtube.com/watch?v=1CjBLKPUwtA&feature=youtu.be',
-      },
-      {
-        name: 'Pitch Deck',
-        url: 'https://drive.google.com/file/d/1B3m44mEgv81rJHfjNfTKi147yX4raQed/view?usp=sharing',
-      },
-      {
-        name: 'Usage tutorial',
-        url: 'https://www.youtube.com/watch?v=PRu1cfvT2bA',
-      }
-    ],
     images: [
       {
-        src: '/project-imgs/projectOne.png',
-        alt: 'Synto landing page',
+        src: '/project-imgs/antiscamurai/antiscamurai-thumbnail.png',
+        alt: 'AntiScamurai thumbnail',
       },
       {
-        src: '/project-imgs/projectTwo.png',
-        alt: 'Synto chat interface',
+        src: '/project-imgs/antiscamurai/anticcamurai.jpg',
+        alt: 'AntiScamurai',
       },
       {
-        src: '/project-imgs/projectThree.png',
-        alt: 'Synto chat interface',
+        src: '/project-imgs/antiscamurai/antiscamurai-1.jpg',
+        alt: 'AntiScamurai',
       },
       {
-        src: '/project-imgs/projectFour.png',
-        alt: 'Synto chat interface',
-      },
-      {
-        src: '/project-imgs/projectFive.png',
-        alt: 'Synto chat interface',
-      },
-      {
-        src: '/project-imgs/projectSix.png',
-        alt: 'Synto chat interface',
+        src: '/project-imgs/antiscamurai/antiscamurai-2.jpg',
+        alt: 'AntiScamurai',
       },
     ],
   },
   {
-    title: 'Rrate',
-    description:
-      "Rrate is a fun website to allow user to compare his salary with the richest people in the world. Try it now it's online!",
-    techStack: ['Html', 'Css', 'Javascript'],
-    date: '2024',
-    links: [
-      {
-        name: 'website',
-        url: 'https://rrate.app',
-      },
-      {
-        name: 'github',
-        url: 'https://github.com/toukoum/Rrate',
-      },
-    ],
-    images: [
-      {
-        src: '/project-imgs/projectOne.png',
-        alt: 'Rrate landing page',
-      },
-      {
-        src: '/project-imgs/projectTwo.png',
-        alt: 'Rrate comparison page',
-      },
-      {
-        src: '/project-imgs/projectThree.png',
-        alt: 'Rrate comparison page',
-      },
-    ],
-  },
-  {
-    title: 'Defai',
+    title: 'CatchaBite',
     description:
       "We Win ETHOXford hackathon by building DEFAI. DEFAI stands for Decentralized Finance Artificial Intelligence. It's an AI-powered chat interface that simplifies on-chain operations on the Avalanche blockchain by allowing users to interact using natural language. This makes complex DeFi operations accessible even for those with limited technical expertise.",
     techStack: [
@@ -117,50 +96,36 @@ const PROJECT_CONTENT = [
       'Vercel AI SDK',
       'TypeScript',
     ],
-    date: '2025',
-    links: [
-      {
-        name: 'website',
-        url: 'https://dorahacks.io/buidl/22605',
-      },
-      {
-        name: 'github',
-        url: 'https://github.com/toukoum/DEFAI',
-      },
-      {
-        name: 'LinkedIn',
-        url: 'https://www.linkedin.com/feed/update/urn:li:activity:7299337190151483392/',
-      },
-      {
-        name: 'Youtube Video',
-        url: 'https://www.youtube.com/watch?v=N9O7los4-ng&t=34s&ab_channel=Toukoum',
-      }
-    ],
+    date: '2024',
     images: [
       {
-        src: '/project-imgs/projectFour.png',
-        alt: 'Landing Page of Defai',
+        src: '/project-imgs/catchabite/catchabite-thumbail.png',
+        alt: 'CatchaBite thumbnail',
       },
       {
-        src: '/project-imgs/projectFive.png',
-        alt: 'Confirmation popup of Defai',
+        src: '/project-imgs/catchabite/catchabite-vendor.png',
+        alt: 'CatchaBite vendor interface',
       },
       {
-        src: '/project-imgs/projectSix.png',
-        alt: 'Chatbot of Defai',
+        src: '/project-imgs/catchabite/catchabite-web.png',
+        alt: 'CatchaBite web interface',
       },
       {
-        src: '/project-imgs/projectOne.jpeg',
-        alt: 'Winner team',
+        src: '/project-imgs/catchabite/cx-app.png',
+        alt: 'CatchaBite app',
+      },
+      {
+        src: '/project-imgs/catchabite/cx-app-2.png',
+        alt: 'CatchaBite app 2',
       },
     ],
   },
   {
-    title: 'Fitgear',
+    title: 'Marketplace SaaS',
     description:
       'Won the Gotta Go Hack IA by building Fitgear, a virtual voice seller accessible by QR code to improve the ratio between customers and sellers. Created an AI pipeline with API calls and a RAG system for natural language interactions.',
     techStack: ['Next.js', 'TailwindCSS', 'OpenAI API', 'Langchain'],
-    date: '2024',
+    date: '2023',
     links: [
       {
         name: 'Linkedin',
@@ -169,27 +134,23 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/project-imgs/projectTwo.png',
-        alt: 'Fitgear chatbot',
-      },
-      {
-        src: '/project-imgs/projectThree.png',
-        alt: 'Fitgear landing page',
+        src: '/project-imgs/image-coming-soon-placeholder.png',
+        alt: 'Marketplace SaaS - Coming Soon',
       },
     ],
   },
   {
-    title: 'Datai',
+    title: 'Finance Tracker',
     description:
       "DATAI is an AI-powered agent that lets non-technical users query a database using natural language without writing SQL. Built using Next.js, TailwindCSS, shadcn-ui, and Anthropic's Claude API, this project focuses on simplicity, speed, and user-friendly design.",
     techStack: [
-      'Next.js',
+      'Python',
       'TailwindCSS',
       'shadcn-ui',
       'Claude API',
       'TypeScript',
     ],
-    date: '2024',
+    date: '2022',
     links: [
       {
         name: 'GitHub',
@@ -202,61 +163,82 @@ const PROJECT_CONTENT = [
     ],
     images: [
       {
-        src: '/project-imgs/projectFour.png',
-        alt: 'Datai landing page',
+        src: '/project-imgs/image-coming-soon-placeholder.png',
+        alt: 'Finance Tracker - Coming Soon',
       },
-      {
-        src: '/project-imgs/projectFive.png',
-        alt: 'Datai chatbot',
-      },
-      {
-        src: '/project-imgs/projectSix.png',
-        alt: 'Datai chatbot',
-      },
-      {
-        src: '/project-imgs/projectone.png',
-        alt: 'Datai chatbot',
-      }
     ],
   },
   {
-    title: '3d Pong Game',
+    title: 'Store POS System',
     description:
-      "Transcendance is the final project of my 42 cursus. It's a 3D pong game with multiplayer capabilities, user authentication, and real-time gameplay. We had to do everything from scratch, so it was pretty challenging and we learned a lot.",
-    techStack: ['Django', 'Python', 'JavaScript', 'Websockets', 'PostgreSQL', 'Docker', 'Nginx', 'Web3', 'Solidity'],
+      "StorePOS is a sleek, offline-first desktop Point of Sale application built with Electron and Node.js. Designed for small to medium-sized retail environments, it offers essential sales functionality including multi-terminal networking, receipt printing with customizable layouts, barcode scanning, product and category management, inventory control, open tabs, customer database, transaction history with advanced filters, and staff accounts with permission levels.",
+    techStack: [
+      'Electron',
+      'Node.js',
+      'Express',
+      'SQLite',
+      'Socket.io',
+      'jQuery',
+      'Bootstrap',
+      'JavaScript',
+    ],
     date: '2023',
     links: [
       {
         name: 'GitHub',
-        url: 'https://github.com/toukoum/Transcendance',
+        url: 'https://github.com/MontherTuwati/Store-POS',
       },
     ],
     images: [
       {
-        src: '/project-imgs/projectOne.png',
-        alt: 'Transcendance landing page',
+        src: '/project-imgs/pos/pos-thumbnail.png',
+        alt: 'Store POS System thumbnail',
       },
       {
-        src: '/project-imgs/projectTwo.png',
-        alt: 'Transcendance game',
+        src: '/project-imgs/pos/pos-2.jpg',
+        alt: 'Store POS System',
       },
       {
-        src: '/project-imgs/projectThree.png',
-        alt: 'Transcendance game',
+        src: '/project-imgs/pos/pos-3.jpg',
+        alt: 'Store POS System',
+      },
+    ],
+  },
+  {
+    title: "Joe's Auto Body",
+    description:
+      "Joe's Auto Body is a comprehensive automotive repair website featuring a full-service booking system with Google Calendar integration, car marketplace for vehicle listings, customer reviews system, service showcase pages, and contact management. Built with Next.js frontend and Strapi headless CMS backend, it includes appointment booking with date/time selection, car inventory management, FAQ sections, and responsive design with smooth animations.",
+    techStack: [
+      'Next.js',
+      'React',
+      'Strapi',
+      'TailwindCSS',
+      'shadcn-ui',
+      'Vercel',
+      'TypeScript',
+      'PostgreSQL',
+      'Node.js',
+      'React Hook Form',
+      'Redis',
+      'Framer Motion',
+      'Google Cloud APIs'
+    ],
+    date: '2025',
+    links: [
+      {
+        name: 'Website',
+        url: 'https://joesautobody.ca/',
+      },
+    ],
+    images: [
+      {
+        src: '/project-imgs/joesautobody/joes-auto-thumbnail.png',
+        alt: "Joe's Auto Body thumbnail",
       },
       {
-        src: '/project-imgs/projectFour.png',
-        alt: 'Transcendance game',
+        src: '/project-imgs/joesautobody/jab.jpg',
+        alt: "Joe's Auto Body",
       },
-      {
-        src: '/project-imgs/projectFive.png',
-        alt: 'Transcendance game',
-      },
-      {
-        src: '/project-imgs/projectSix.png',
-        alt: 'Transcendance game',
-      }
-
     ],
   },
   {
@@ -352,8 +334,24 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
     return <div>Project details not available</div>;
   }
 
+  // Get thumbnail (first image) and remaining images
+  const thumbnail = projectData.images && projectData.images.length > 0 ? projectData.images[0] : null;
+  const remainingImages = projectData.images && projectData.images.length > 1 ? projectData.images.slice(1) : [];
+
   return (
     <div className="space-y-10">
+      {/* Thumbnail */}
+      {thumbnail && (
+        <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
+          <Image
+            src={thumbnail.src}
+            alt={thumbnail.alt}
+            fill
+            className="object-cover"
+          />
+        </div>
+      )}
+
       {/* Header section with description */}
       <div className="rounded-3xl bg-[#F5F5F7] p-8 dark:bg-[#1D1D1F]">
         <div className="space-y-6">
@@ -387,12 +385,7 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
       {/* Links section */}
       {projectData.links && projectData.links.length > 0 && (
         <div className="mb-24">
-          <div className="px-6 mb-4 flex items-center gap-2">
-            <h3 className="text-sm tracking-wide text-neutral-500 dark:text-neutral-400">
-              Links
-            </h3>
-            <Link className="text-muted-foreground w-4" />
-          </div>
+          
           <Separator className="my-4" />
           <div className="space-y-3">
             {projectData.links.map((link, index) => (
@@ -412,65 +405,108 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
       )}
 
       {/* Images gallery */}
-      {projectData.images && projectData.images.length > 0 && (
+      {remainingImages.length > 0 && (
         <div className="space-y-6">
-          <div className="grid grid-cols-1 gap-4">
-            {projectData.images.map((image, index) => (
-              <div
-                key={index}
-                className="relative aspect-video overflow-hidden rounded-2xl"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover transition-transform"
-                />
+          {/* Check for CatchaBite cx-app images to display side by side */}
+          {projectData.title === 'CatchaBite' && remainingImages.some(img => img.src.includes('cx-app')) ? (
+            <>
+              {/* Regular images before cx-app */}
+              {remainingImages.filter(img => !img.src.includes('cx-app')).map((image, index) => (
+                <div
+                  key={index}
+                  className="relative aspect-video w-full overflow-hidden rounded-2xl"
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover transition-transform"
+                  />
+                </div>
+              ))}
+              {/* cx-app images side by side */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {remainingImages.filter(img => img.src.includes('cx-app')).map((image, index) => (
+                  <div
+                    key={index}
+                    className="relative aspect-video overflow-hidden rounded-2xl"
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover transition-transform"
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </>
+          ) : (
+            /* Default single column layout */
+            <div className="grid grid-cols-1 gap-4">
+              {remainingImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="relative aspect-video overflow-hidden rounded-2xl"
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover transition-transform"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>
   );
 };
 
-// Main data export with updated content
+// Main data export with updated content (sorted by date, newest first)
 export const data = [
   {
+    category: 'Client Project',
+    title: "Joe's Auto Body",
+    src: '/project-imgs/joesautobody/joes-auto-thumbnail.png',
+    content: <ProjectContent project={{ title: "Joe's Auto Body" }} />,
+  },
+  {
     category: 'Startup Project',
-    title: 'Synto',
-    src: '/project-imgs/projectFive.png',
-    content: <ProjectContent project={{ title: 'Synto' }} />,
+    title: 'AntiScamurai',
+    src: '/project-imgs/antiscamurai/antiscamurai-thumbnail.png',
+    content: <ProjectContent project={{ title: 'AntiScamurai' }} />,
   },
   {
-    category: 'Fun Tool',
-    title: 'Rrate',
-    src: '/project-imgs/projectTwo.png',
-    content: <ProjectContent project={{ title: 'Rrate' }} />,
+    category: 'Startup Project',
+    title: 'CatchaBite',
+    src: '/project-imgs/catchabite/catchabite-thumbail.png',
+    content: <ProjectContent project={{ title: 'CatchaBite' }} />,
   },
   {
-    category: 'Hackathon Winner',
-    title: 'Defai',
-    src: '/project-imgs/projectThree.png',
-    content: <ProjectContent project={{ title: 'Defai' }} />,
+    category: 'Enterprise Application',
+    title: 'School Student Info System',
+    src: '/project-imgs/school-sis/school-sis-thumbnail.png',
+    content: <ProjectContent project={{ title: 'School Student Info System' }} />,
   },
   {
-    category: 'Hackathon Winner',
-    title: 'Fitgear',
-    src: '/project-imgs/projectFour.png',
-    content: <ProjectContent project={{ title: 'Fitgear' }} />,
+    category: 'SaaS Platform',
+    title: 'Marketplace SaaS',
+    src: '/project-imgs/image-coming-soon-placeholder.png',
+    content: <ProjectContent project={{ title: 'Marketplace SaaS' }} />,
   },
   {
-    category: 'Business Intelligence',
-    title: 'Datai',
-    src: '/project-imgs/projectFive.png',
-    content: <ProjectContent project={{ title: 'Datai' }} />,
+    category: 'Business Tool',
+    title: 'Store POS System',
+    src: '/project-imgs/pos/pos-thumbnail.png',
+    content: <ProjectContent project={{ title: 'Store POS System' }} />,
   },
   {
-    category: '42 Project',
-    title: '3d Pong Game',
-    src: '/project-imgs/projectSix.png',
-    content: <ProjectContent project={{ title: '3d Pong Game' }} />,
+    category: 'Finance App',
+    title: 'Finance Tracker',
+    src: '/project-imgs/image-coming-soon-placeholder.png',
+    content: <ProjectContent project={{ title: 'Finance Tracker' }} />,
   },
 ];
