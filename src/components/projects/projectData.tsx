@@ -88,15 +88,28 @@ const PROJECT_CONTENT = [
   {
     title: 'CatchaBite',
     description:
-      "We Win ETHOXford hackathon by building DEFAI. DEFAI stands for Decentralized Finance Artificial Intelligence. It's an AI-powered chat interface that simplifies on-chain operations on the Avalanche blockchain by allowing users to interact using natural language. This makes complex DeFi operations accessible even for those with limited technical expertise.",
+      'CatchaBite is a comprehensive multi-vendor food delivery platform with separate applications for customers, vendors, riders, and administrators. Features include real-time order tracking with live rider location updates, multi-language support, GraphQL API with subscriptions, payment integration (Stripe, PayPal), push notifications, chat system for rider communication, restaurant management, inventory control, order history, reviews and ratings, zone-based delivery management, and PWA support for web app.',
     techStack: [
-      'Next.js',
-      'TailwindCSS',
-      'shadcn-ui',
-      'Vercel AI SDK',
+      'Next.js 14',
+      'React Native',
+      'Expo',
+      'GraphQL',
+      'Apollo Server',
+      'MongoDB',
+      'Node.js',
+      'Express',
       'TypeScript',
+      'TailwindCSS',
+      'Firebase',
+      'Stripe',
+      'PayPal',
+      'Socket.io',
+      'Bull Queue',
+      'Redis',
+      'Docker',
+      'Railway',
     ],
-    date: '2024',
+    date: '2023',
     images: [
       {
         src: '/project-imgs/catchabite/catchabite-thumbail.png',
@@ -123,15 +136,19 @@ const PROJECT_CONTENT = [
   {
     title: 'Marketplace SaaS',
     description:
-      'Won the Gotta Go Hack IA by building Fitgear, a virtual voice seller accessible by QR code to improve the ratio between customers and sellers. Created an AI pipeline with API calls and a RAG system for natural language interactions.',
-    techStack: ['Next.js', 'TailwindCSS', 'OpenAI API', 'Langchain'],
-    date: '2023',
-    links: [
-      {
-        name: 'Linkedin',
-        url: 'https://www.linkedin.com/posts/raphael-giraud-60939519a_hackathon-innovation-sporttech-activity-7210399263774674946-qSXq?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAC6vwikBVSEkS7XWktWS7y6GR3GHwAlKslc',
-      },
+      'Ticketr is a real-time event ticketing marketplace platform built with Next.js 15, Convex, Clerk, and Stripe Connect. Features include real-time ticket availability tracking, smart queuing system with position updates, time-limited ticket offers, secure payment processing with Stripe Connect for direct organizer payments, digital tickets with QR codes, automatic refunds for cancelled events, real-time sales monitoring, automated queue management, event analytics, and bulk refund processing. Built as a SaaS platform enabling event organizers to sell tickets directly to attendees.',
+    techStack: [
+      'Next.js 15',
+      'Convex',
+      'Clerk',
+      'Stripe Connect',
+      'TypeScript',
+      'TailwindCSS',
+      'shadcn/ui',
+      'React Hook Form',
+      'Zod',
     ],
+    date: '2023',
     images: [
       {
         src: '/project-imgs/image-coming-soon-placeholder.png',
@@ -142,25 +159,14 @@ const PROJECT_CONTENT = [
   {
     title: 'Finance Tracker',
     description:
-      "DATAI is an AI-powered agent that lets non-technical users query a database using natural language without writing SQL. Built using Next.js, TailwindCSS, shadcn-ui, and Anthropic's Claude API, this project focuses on simplicity, speed, and user-friendly design.",
+      'Finance Tracker is a desktop application for tracking personal finances built with Python and Tkinter. Features include dashboard overview with monthly progress and expense trends, category-wise expense visualization with color-coded cards, complete transaction history with search functionality, easy transaction entry form, upcoming transactions tracking for planned future expenses, interactive charts showing spending patterns over time, and local SQLite database storage for data privacy.',
     techStack: [
       'Python',
-      'TailwindCSS',
-      'shadcn-ui',
-      'Claude API',
-      'TypeScript',
+      'Tkinter',
+      'SQLite',
+      'Matplotlib',
     ],
     date: '2022',
-    links: [
-      {
-        name: 'GitHub',
-        url: 'https://github.com/toukoum/datai',
-      },
-      {
-        name: 'Youtube Video Demo',
-        url: 'https://youtu.be/iE0RXjdbQsw',
-      }
-    ],
     images: [
       {
         src: '/project-imgs/image-coming-soon-placeholder.png',

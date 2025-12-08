@@ -2,22 +2,15 @@
 import React from 'react';
 import Image from 'next/image';
 
+// Experience sorted by date, newest first (reverse chronological)
 const experiences = [
   {
-    id: 1,
-    title: 'Junior Data Analyst / Core Technician',
-    company: 'McEwen Mining Inc.',
-    year: 'Sept. 2022 – May 2023',
-    description: 'Refactored core scanner workflow using Python, automating data batch processing and centralizing geological scan data for distributed analysis.',
-    logo: '/exp_logos/mcewen-logo.svg',
-  },
-  {
-    id: 2,
-    title: 'Intern Software Developer',
-    company: 'Ozon Telecom',
-    year: 'May 2023 – Dec. 2023',
-    description: 'Contributed to the development of a user app with React, Node.js, NestJS, MongoDB, and Redis, centralizing employee management and attendance tracking.',
-    logo: '/exp_logos/ozon-logo.svg',
+    id: 4,
+    title: 'Full Stack Developer',
+    company: "Joe's Auto Body",
+    year: 'Jan. 2025 – Sept. 2025',
+    description: 'Developed and maintained a dynamic 5 page website with a custom CMS using Next.js, Tailwind CSS, and TypeScript, enabling seamless vehicle listing, booking, and customer inquiry management.',
+    logo: '/exp_logos/joes-logo.svg',
   },
   {
     id: 3,
@@ -28,12 +21,20 @@ const experiences = [
     logo: '/exp_logos/sab-uni.svg',
   },
   {
-    id: 4,
-    title: 'Full Stack Developer',
-    company: 'Joe’s Auto Body',
-    year: 'Jan. 2025 – Present',
-    description: 'Developed and maintained a dynamic 5 page website with a custom CMS using Next.js, Tailwind CSS, and TypeScript, enabling seamless vehicle listing, booking, and customer inquiry management.',
-    logo: '/exp_logos/joes-logo.svg',
+    id: 2,
+    title: 'Intern Software Developer',
+    company: 'Ozon Telecom',
+    year: 'May 2023 – Dec. 2023',
+    description: 'Contributed to the development of a user app with React, Node.js, NestJS, MongoDB, and Redis, centralizing employee management and attendance tracking.',
+    logo: '/exp_logos/ozon-logo.svg',
+  },
+  {
+    id: 1,
+    title: 'Junior Data Analyst / Core Technician',
+    company: 'McEwen Mining Inc.',
+    year: 'Sept. 2022 – May 2023',
+    description: 'Refactored core scanner workflow using Python, automating data batch processing and centralizing geological scan data for distributed analysis.',
+    logo: '/exp_logos/mcewen-logo.svg',
   },
 ];
 
