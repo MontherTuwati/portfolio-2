@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ChevronRight, Link } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
 // Enhanced project content array with all projects

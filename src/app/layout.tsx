@@ -1,23 +1,11 @@
 'use client'; // This layout uses client-side hooks and event listeners
 // Include imports for Lenis
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Lenis from '@studio-freight/lenis';
-import Image from "next/image";
-import { usePathname } from 'next/navigation';
-// Import the Link component from next/link
-import Link from 'next/link';
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import StaggeredMenu from '@/components/ui/StaggeredMenu';
-import { Dock, DockIcon } from "@/components/ui/Dock";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
-// Define social media links and placeholder icon paths
-const socialLinks = [
-  { platform: "GitHub", href: "https://github.com/monthertuwati", iconPath: "/icons/github_icon.svg" }, // <-- Replace YOUR_GITHUB_LINK and icon path
-  { platform: "LinkedIn", href: "https://www.linkedin.com/in/monthertuwati/", iconPath: "/icons/linkedin_icon.svg" }, // <-- Replace YOUR_LINKEDIN_LINK and icon path
-  { platform: "Gmail", href: "mailto:monthertuwati@gmail.com", iconPath: "/icons/gmail_icon.svg" }, // <-- Replace YOUR_EMAIL_ADDRESS and icon path
-];
 
 // Define menu items for StaggeredMenu
 const menuItems = [
@@ -61,12 +49,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // State for mobile menu (moved from page.tsx)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // Get current pathname
-  const pathname = usePathname();
-  // Track active section
-  const [activeSection, setActiveSection] = useState('home');
 
   // --- Lenis Smooth Scrolling Implementation ---
   // Use useRef to hold the Lenis instance
@@ -117,43 +99,6 @@ export default function RootLayout({
   const handleMenuItemClick = (item: any) => {
     scrollToSection(item.link);
   };
-
-  // Intersection Observer to track active section
-  useEffect(() => {
-    const sections = ['home', 'about', 'experience', 'projects', 'contact'];
-    
-    const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -60% 0px', // Trigger when section is 20% from top
-      threshold: 0,
-    };
-
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    sections.forEach((sectionId) => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        observer.observe(element);
-      }
-    });
-
-    return () => {
-      sections.forEach((sectionId) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          observer.unobserve(element);
-        }
-      });
-    };
-  }, []);
 
   return (
     <html lang="en">

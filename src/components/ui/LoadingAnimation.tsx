@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import GlitchText from '../GlitchText';
+import Image from 'next/image';
 
 interface LoadingAnimationProps {
   onComplete: () => void;
@@ -68,9 +68,11 @@ export default function LoadingAnimation({ onComplete }: LoadingAnimationProps) 
             className="relative w-48 h-48 md:w-64 md:h-64"
           >
             {/* Main Logo */}
-            <img 
+            <Image 
               src="/logo/mt-logo.svg" 
               alt="Monther Tuwati Logo" 
+              width={256}
+              height={256}
               className="w-48 h-48 md:w-64 md:h-64 relative z-10"
             />
             

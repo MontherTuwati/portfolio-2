@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import { data } from "@/components/projects/projectData";
-import { useState, useRef, useContext, useEffect } from 'react';
+import { useState, useRef, useContext, useEffect, useCallback } from 'react';
 import { CarouselContext } from "@/components/projects/projectCarousel";
 import { useOutsideClick } from '@/hooks/useOutsideClick';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -33,6 +33,13 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const { onCardClose } = useContext(CarouselContext);
 
+  const handleOpen = () => setOpen(true);
+
+  const handleClose = useCallback(() => {
+    setOpen(false);
+    if (onCardClose) onCardClose(index);
+  }, [onCardClose, index]);
+
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape') handleClose();
@@ -54,17 +61,10 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
       document.body.style.overflow = '';
       html.style.overflow = '';
     };
-  }, [open]);
+  }, [open, handleClose]);
 
   // @ts-expect-error - useOutsideClick types not aligned
   useOutsideClick(containerRef, () => handleClose());
-
-  const handleOpen = () => setOpen(true);
-
-  const handleClose = () => {
-    setOpen(false);
-    if (onCardClose) onCardClose(index);
-  };
 
   return (
     <>

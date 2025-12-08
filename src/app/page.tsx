@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TiltedCard from "@/components/ui/TiltedCard";
 import HeroSection from "./sections/HeroSection";
 import AboutSection from "./sections/AboutSection";

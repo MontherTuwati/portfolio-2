@@ -41,7 +41,7 @@ export default function ContactSection() {
     <div className="mt-20 mb-20">
       {/* Section Title */}
       <h1 className="text-6xl sm:text-8xl md:text-9xl font-bold leading-none mb-8 md:mb-16">
-        <span className="text-white">LET'S WORK</span>
+        <span className="text-white">LET&apos;S WORK</span>
         <br />
         <span className="text-gray-600">TOGETHER</span>
       </h1>

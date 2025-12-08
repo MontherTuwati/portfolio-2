@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import Image from 'next/image';
 
 export default function FooterSection() {
   const currentYear = new Date().getFullYear();
@@ -35,11 +35,13 @@ export default function FooterSection() {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center overflow-hidden">
-                <img 
+              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center overflow-hidden relative">
+                <Image 
                   src="/logo/mt-logo.svg" 
                   alt="Monther Tuwati Logo" 
-                  className="w-8 h-8 object-contain"
+                  width={32}
+                  height={32}
+                  className="object-contain"
                 />
               </div>
               <div>

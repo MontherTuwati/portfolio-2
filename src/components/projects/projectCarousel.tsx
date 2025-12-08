@@ -14,6 +14,7 @@ import React, {
   useEffect,
   useRef,
   useState,
+  useCallback,
 } from 'react';
 
 type Card = {
@@ -184,6 +185,13 @@ export const Card = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const { onCardClose } = useContext(CarouselContext);
 
+  const handleOpen = () => setOpen(true);
+
+  const handleClose = useCallback(() => {
+    setOpen(false);
+    onCardClose(index);
+  }, [onCardClose, index]);
+
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape') handleClose();
@@ -205,17 +213,10 @@ export const Card = ({
       document.body.style.overflow = '';
       html.style.overflow = '';
     };
-  }, [open]);
+  }, [open, handleClose]);
 
   // @ts-expect-error - useOutsideClick types not aligned
   useOutsideClick(containerRef, () => handleClose());
-
-  const handleOpen = () => setOpen(true);
-
-  const handleClose = () => {
-    setOpen(false);
-    onCardClose(index);
-  };
 
   return (
     <>

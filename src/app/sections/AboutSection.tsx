@@ -1,6 +1,4 @@
 "use client"
-import BlurText from "@/components/ui/TextAnimations/BlurText/BlurText";
-import TiltedCard from "@/components/ui/TiltedCard";
 import SkillTag from "@/components/SkillTag";
 
 const devStack = {
@@ -22,10 +20,6 @@ const devStack = {
 const contentSkills = [
   'Figma', 'Canva', 'Unity', 'Unreal Engine', 'Godot', 'Adobe Premiere Pro', 'Adobe Photoshop', 'Adobe Illustrator'
 ];
-
-const handleAnimationComplete = () => {
-  console.log('Animation completed!');
-};
 
 export default function AboutSection() {
   return (
