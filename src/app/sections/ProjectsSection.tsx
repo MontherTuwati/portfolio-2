@@ -11,7 +11,7 @@ export default function AllProjects() {
   return (
     <div className="mt-20">
       {/* Section Title */}
-      <h1 className="text-9xl font-bold leading-none mb-16">
+      <h1 className="text-6xl sm:text-8xl md:text-9xl font-bold leading-none mb-8 md:mb-16">
         <span className="text-white">MY</span>
         <br />
         <span className="text-gray-600">PROJECTS</span>
@@ -182,14 +182,14 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
 
       <motion.div 
         ref={cardRef}
-        className="flex items-center space-x-12 group cursor-pointer"
+        className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 sm:space-x-12 group cursor-pointer"
         onClick={handleOpen}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         transition={{ duration: 0.2 }}
       >
         {/* Project Thumbnail */}
-        <div className="w-48 h-48 relative flex-shrink-0 rounded-2xl overflow-hidden">
+        <div className="w-full sm:w-32 md:w-40 lg:w-48 h-32 sm:h-32 md:h-40 lg:h-48 relative flex-shrink-0 rounded-2xl overflow-hidden">
           <Image
             src={project.src}
             alt={project.title}
@@ -200,13 +200,13 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
 
         {/* Project Details */}
         <div className="flex-grow">
-          <h3 className="text-5xl font-bold text-white mb-3">{project.title}</h3>
-          <p className="text-gray-400 text-xl">{project.category}</p>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3">{project.title}</h3>
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl">{project.category}</p>
         </div>
 
-        {/* Arrow Icon */}
-        <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
-          <svg className="w-10 h-10 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        {/* Arrow Icon - Hidden on mobile, shown on desktop hover */}
+        <div className="hidden sm:flex flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+          <svg className="w-8 h-8 md:w-10 md:h-10 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
           </svg>
         </div>

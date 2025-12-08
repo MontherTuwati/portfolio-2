@@ -42,7 +42,7 @@ const ExperienceTimeline: React.FC = () => {
   return (
     <>
       <div className="mt-20 mb-16">
-        <h1 className="text-9xl font-bold leading-none">
+        <h1 className="text-6xl sm:text-8xl md:text-9xl font-bold leading-none">
           <span className="text-white">WORK</span>
           <br />
           <span className="text-gray-600">EXPERIENCE</span>
@@ -50,34 +50,34 @@ const ExperienceTimeline: React.FC = () => {
       </div>
 
       {/* Experience List - Matching Projects Section Style */}
-      <div className="space-y-12">
+      <div className="space-y-8 md:space-y-12">
         {experiences.map((exp) => (
-          <div key={exp.id} className="flex items-center space-x-12 group">
+          <div key={exp.id} className="flex flex-col md:flex-row md:items-center gap-4 md:gap-12 md:space-x-12 group">
             {/* Company Logo */}
-            <div className="w-24 h-24 relative flex-shrink-0 rounded-2xl overflow-hidden bg-white/5 p-4">
+            <div className="w-16 h-16 md:w-24 md:h-24 relative flex-shrink-0 rounded-2xl overflow-hidden bg-white/5 p-3 md:p-4">
               <Image
                 src={exp.logo}
                 alt={`${exp.company} logo`}
                 fill
                 style={{ objectFit: 'contain' }}
-                className="p-2"
+                className="p-1 md:p-2"
               />
             </div>
 
             {/* Experience Details */}
             <div className="flex-grow">
               <div className="flex items-baseline gap-4 mb-2">
-                <h3 className="text-5xl font-bold text-white">{exp.company}</h3>
+                <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white">{exp.company}</h3>
               </div>
               <div className="flex flex-col items-baseline gap-2 mb-2">
-                <p className="text-xl text-orange-400">{exp.title}</p>
-                <span className="text-xl text-gray-500">{exp.year}</span>
+                <p className="text-lg md:text-xl text-orange-400">{exp.title}</p>
+                <span className="text-base md:text-xl text-gray-500">{exp.year}</span>
               </div>
-              <p className="text-gray-400 text-lg leading-relaxed">{exp.description}</p>
+              <p className="text-gray-400 text-sm md:text-base lg:text-lg leading-relaxed">{exp.description}</p>
             </div>
 
-            {/* Arrow Icon */}
-            <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+            {/* Arrow Icon - Hidden on mobile, shown on hover on desktop */}
+            <div className="hidden md:flex flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
               <svg className="w-10 h-10 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
               </svg>

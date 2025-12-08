@@ -55,20 +55,20 @@ export default function HeroSection() {
     <div>
         {/* Hero Section */}
         <div className="mb-10">
-          <h1 className="text-9xl font-bold leading-none mb-6">
+          <h1 className="text-6xl sm:text-8xl md:text-9xl font-bold leading-none mb-6">
             <span className="text-white">SOFTWARE</span>
             <br />
             <span className="text-gray-600">ENGINEER</span>
           </h1>
-          <p className="text-gray-400 text-2xl leading-relaxed max-w-3xl">
-          Love crafting software that solves meaningful problems. <br /> Turn ideas into scalable, maintainable solutions. <br /> Blend precision, performance, and innovation in every build.
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl">
+          Love crafting software that solves meaningful problems. <br className="hidden sm:block" /> Turn ideas into scalable, maintainable solutions. <br className="hidden sm:block" /> Blend precision, performance, and innovation in every build.
           </p>
         </div>
 
         {/* Statistics Section */}
-        <div className="flex justify-start items-start gap-12 mb-16">
+        <div className="flex flex-col sm:flex-row justify-start items-start gap-6 sm:gap-8 md:gap-12 mb-16">
           <div className="text-left">
-            <div className="text-8xl font-bold text-white mb-2">
+            <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-2">
               +<CountUp
                 from={0}
                 to={3}
@@ -77,12 +77,12 @@ export default function HeroSection() {
                 className="count-up-text"
               />
             </div>
-            <div className="text-gray-400 text-2xl leading-tight">
+            <div className="text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl leading-tight">
               YEARS OF<br/>EXPERIENCE
             </div>
           </div>
           <div className="text-left">
-            <div className="text-8xl font-bold text-white mb-2">
+            <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-2">
               +<CountUp
                 from={0}
                 to={26}
@@ -91,12 +91,12 @@ export default function HeroSection() {
                 className="count-up-text"
               />
             </div>
-            <div className="text-gray-400 text-2xl leading-tight">
+            <div className="text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl leading-tight">
               PROJECTS<br/>COMPLETED
             </div>
           </div>
           <div className="text-left">
-            <div className="text-8xl font-bold text-white mb-2">
+            <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-2">
               +<CountUp
                 from={0}
                 to={43}
@@ -105,27 +105,27 @@ export default function HeroSection() {
                 className="count-up-text"
               />
             </div>
-            <div className="text-gray-400 text-2xl leading-tight">
+            <div className="text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl leading-tight">
               WORLDWIDE<br/>CLIENTS
             </div>
           </div>
         </div>
 
         {/* Skill Cards */}
-        <div className="grid grid-cols-2 w-full max-w-4xl gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 w-full max-w-4xl gap-4 sm:gap-6 md:gap-8">
           {/* Frontend Card */}
           <motion.div 
-            className="bg-orange-500 rounded-2xl p-6 relative overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
+            className="bg-orange-500 rounded-2xl p-4 sm:p-6 relative overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
             onClick={() => toggleCard('frontend')}
             variants={cardVariants}
             animate={expandedCard === 'frontend' ? 'expanded' : 'collapsed'}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="absolute top-4 left-4 w-10 h-10 bg-orange-300 rounded-lg flex items-center justify-center">
-              <i className="fas fa-code text-gray-800 text-lg"></i>
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 w-8 h-8 sm:w-10 sm:h-10 bg-orange-300 rounded-lg flex items-center justify-center">
+              <i className="fas fa-code text-gray-800 text-base sm:text-lg"></i>
             </div>
-            <h3 className="text-white font-bold text-xl mt-12 leading-tight">FRONTEND<br/>DEVELOPMENT</h3>
+            <h3 className="text-white font-bold text-lg sm:text-xl mt-10 sm:mt-12 leading-tight">FRONTEND<br/>DEVELOPMENT</h3>
             <motion.div 
               className="absolute bottom-4 right-4"
               variants={arrowVariants}
@@ -167,17 +167,17 @@ export default function HeroSection() {
           
           {/* Backend Card */}
           <motion.div 
-            className="bg-gray-800 border border-gray-800 rounded-2xl p-6 relative overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
+            className="bg-gray-800 border border-gray-800 rounded-2xl p-4 sm:p-6 relative overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
             onClick={() => toggleCard('backend')}
             variants={cardVariants}
             animate={expandedCard === 'backend' ? 'expanded' : 'collapsed'}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="absolute top-4 left-4 w-10 h-10 bg-gray-600 rounded-lg flex items-center justify-center">
-              <i className="fas fa-server text-orange-500 text-lg"></i>
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 w-8 h-8 sm:w-10 sm:h-10 bg-gray-600 rounded-lg flex items-center justify-center">
+              <i className="fas fa-server text-orange-500 text-base sm:text-lg"></i>
             </div>
-            <h3 className="text-white font-bold text-xl mt-12 leading-tight">BACKEND<br/>DEVELOPMENT</h3>
+            <h3 className="text-white font-bold text-lg sm:text-xl mt-10 sm:mt-12 leading-tight">BACKEND<br/>DEVELOPMENT</h3>
             <motion.div 
               className="absolute bottom-4 right-4"
               variants={arrowVariants}

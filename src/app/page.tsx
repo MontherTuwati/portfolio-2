@@ -24,10 +24,10 @@ export default function Home() {
   return (
     <main className="min-h-screen font-poppins text-white">
       {/* Two Column Layout - Only for main content sections */}
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         {/* Left Column - TiltedCard (only for main sections) */}
-        <div className="w-1/3 p-12 flex justify-center items-start">
-          <div className="hidden md:block sticky top-24 self-start">
+        <div className="hidden md:block md:w-1/3 md:p-12 flex justify-center items-start">
+          <div className="sticky top-24 self-start">
             <TiltedCard
               imageSrc="/photos/tiltedcard.svg"
               altText="MontherTuwati"
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
 
         {/* Right Column - All Content Sections */}
-        <div className="w-2/3 p-12">
+        <div className="w-full md:w-2/3 p-4 md:p-8 lg:p-12">
           <div id="home">
             <HeroSection />
           </div>
