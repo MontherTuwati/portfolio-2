@@ -26,32 +26,36 @@ export default function Home() {
       {/* Two Column Layout - Only for main content sections */}
       <div className="flex flex-col md:flex-row">
         {/* Left Column - TiltedCard (only for main sections) */}
-        <div className="hidden md:block md:w-1/3 md:p-12 flex justify-center items-start">
+        <div className="hidden md:block md:w-5/12 lg:w-1/3 md:p-6 lg:p-8 xl:p-12 flex justify-center items-start">
           <div className="sticky top-24 self-start">
-            <TiltedCard
-              imageSrc="/photos/tiltedcard.svg"
-              altText="MontherTuwati"
-              captionText="Monther Tuwati"
-              containerHeight="600px"
-              containerWidth="500px"
-              imageHeight="700px"
-              imageWidth="500px"
-              rotateAmplitude={10}
-              scaleOnHover={1.1}
-              showMobileWarning={false}
-              showTooltip={false}
-              displayOverlayContent={true}
-              overlayContent={
-                <p className="bg-transparent px-4 py-2 border-1 border-dashed rounded-lg opacity-50 font-bold m-5 absolute top-5 left-85">
-                  Monther Tuwati
-                </p>
-              }
-            />
+            <div className="w-[280px] md:w-[320px] lg:w-[400px] xl:w-[500px]">
+              <div className="h-[420px] md:h-[480px] lg:h-[540px] xl:h-[600px]">
+                <TiltedCard
+                  imageSrc="/photos/tiltedcard.svg"
+                  altText="MontherTuwati"
+                  captionText="Monther Tuwati"
+                  containerHeight="100%"
+                  containerWidth="100%"
+                  imageHeight="116.67%"
+                  imageWidth="100%"
+                rotateAmplitude={10}
+                scaleOnHover={1.1}
+                showMobileWarning={false}
+                showTooltip={false}
+                displayOverlayContent={true}
+                  overlayContent={
+                  <p className="bg-transparent px-3 py-1.5 md:px-4 md:py-2 border-1 border-dashed border-white rounded-lg font-bold text-sm md:text-base lg:text-lg text-white absolute top-4 right-4 md:top-5 md:right-5" style={{ opacity: 0.9 }}>
+                    Monther<br />Tuwati
+                  </p>
+                }
+                />
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Right Column - All Content Sections */}
-        <div className="w-full md:w-2/3 p-4 md:p-8 lg:p-12">
+        <div className="w-full md:w-7/12 lg:w-2/3 p-4 md:p-6 lg:p-8 xl:p-12">
           <div id="home">
             <HeroSection />
           </div>

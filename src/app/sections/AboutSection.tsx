@@ -25,13 +25,13 @@ export default function AboutSection() {
   return (
     <>
     <div className="mt-20">
-      <h1 className="text-6xl sm:text-8xl md:text-9xl font-bold leading-none">
+      <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none">
         <span className="text-white">ABOUT</span>
         <br />
         <span className="text-gray-600">ME</span>
       </h1>
     </div>
-    <div className="flex-grow flex flex-col md:flex-row items-center justify-center w-full mt-10 mb-20 gap-6 md:gap-8">
+    <div className="flex-grow flex flex-col md:flex-row items-center justify-center w-full mt-10 mb-20 gap-6 md:gap-6 lg:gap-8">
       <div className="flex flex-col md:flex-row w-full max-w-6xl px-4 md:px-0 gap-6 md:gap-8">
         {/* DEVELOP Card */}
         <div className="relative p-6 rounded-lg transition-transform duration-300 ease-in-out hover:scale-105 custom-corner-border">

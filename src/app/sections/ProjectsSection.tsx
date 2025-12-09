@@ -11,7 +11,7 @@ export default function AllProjects() {
   return (
     <div className="mt-20">
       {/* Section Title */}
-      <h1 className="text-6xl sm:text-8xl md:text-9xl font-bold leading-none mb-8 md:mb-16">
+      <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none mb-8 md:mb-12 lg:mb-16">
         <span className="text-white">MY</span>
         <br />
         <span className="text-gray-600">PROJECTS</span>
@@ -182,14 +182,14 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
 
       <motion.div 
         ref={cardRef}
-        className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 sm:space-x-12 group cursor-pointer"
+        className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12 group cursor-pointer"
         onClick={handleOpen}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         transition={{ duration: 0.2 }}
       >
         {/* Project Thumbnail */}
-        <div className="w-full sm:w-32 md:w-40 lg:w-48 h-32 sm:h-32 md:h-40 lg:h-48 relative flex-shrink-0 rounded-2xl overflow-hidden">
+        <div className="w-full sm:w-28 md:w-36 lg:w-40 xl:w-48 h-28 sm:h-28 md:h-36 lg:h-40 xl:h-48 relative flex-shrink-0 rounded-2xl overflow-hidden">
           <Image
             src={project.src}
             alt={project.title}
@@ -200,8 +200,8 @@ const ProjectCard = ({ project, index }: { project: any; index: number }) => {
 
         {/* Project Details */}
         <div className="flex-grow">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3">{project.title}</h3>
-          <p className="text-gray-400 text-base sm:text-lg md:text-xl">{project.category}</p>
+          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 sm:mb-3">{project.title}</h3>
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl">{project.category}</p>
         </div>
 
         {/* Arrow Icon - Hidden on mobile, shown on desktop hover */}

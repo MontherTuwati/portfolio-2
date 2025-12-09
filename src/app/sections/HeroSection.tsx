@@ -55,20 +55,20 @@ export default function HeroSection() {
     <div>
         {/* Hero Section */}
         <div className="mb-10">
-          <h1 className="text-6xl sm:text-8xl md:text-9xl font-bold leading-none mb-6">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-none mb-6">
             <span className="text-white">SOFTWARE</span>
             <br />
             <span className="text-gray-600">ENGINEER</span>
           </h1>
-          <p className="text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-3xl">
+          <p className="text-gray-400 text-base sm:text-lg md:text-lg lg:text-xl xl:text-2xl leading-relaxed max-w-3xl">
           Love crafting software that solves meaningful problems. <br className="hidden sm:block" /> Turn ideas into scalable, maintainable solutions. <br className="hidden sm:block" /> Blend precision, performance, and innovation in every build.
           </p>
         </div>
 
         {/* Statistics Section */}
-        <div className="flex flex-col sm:flex-row justify-start items-start gap-6 sm:gap-8 md:gap-12 mb-16">
+        <div className="flex flex-col sm:flex-row justify-start items-start gap-4 sm:gap-6 md:gap-6 lg:gap-8 xl:gap-12 mb-16">
           <div className="text-left">
-            <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-2">
+            <div className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-2">
               +<CountUp
                 from={0}
                 to={3}
@@ -77,12 +77,12 @@ export default function HeroSection() {
                 className="count-up-text"
               />
             </div>
-            <div className="text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl leading-tight">
+            <div className="text-gray-400 text-sm sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl leading-tight">
               YEARS OF<br/>EXPERIENCE
             </div>
           </div>
           <div className="text-left">
-            <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-2">
+            <div className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-2">
               +<CountUp
                 from={0}
                 to={26}
@@ -91,12 +91,12 @@ export default function HeroSection() {
                 className="count-up-text"
               />
             </div>
-            <div className="text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl leading-tight">
+            <div className="text-gray-400 text-sm sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl leading-tight">
               PROJECTS<br/>COMPLETED
             </div>
           </div>
           <div className="text-left">
-            <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-2">
+            <div className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-2">
               +<CountUp
                 from={0}
                 to={43}
@@ -105,7 +105,7 @@ export default function HeroSection() {
                 className="count-up-text"
               />
             </div>
-            <div className="text-gray-400 text-base sm:text-lg md:text-xl lg:text-2xl leading-tight">
+            <div className="text-gray-400 text-sm sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl leading-tight">
               WORLDWIDE<br/>CLIENTS
             </div>
           </div>
