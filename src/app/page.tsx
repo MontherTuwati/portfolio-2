@@ -22,11 +22,11 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen font-poppins text-white">
+    <main className="min-h-screen font-poppins text-white pt-20 md:pt-0">
       {/* Two Column Layout - Only for main content sections */}
       <div className="flex flex-col md:flex-row">
         {/* Left Column - TiltedCard (only for main sections) */}
-        <div className="hidden md:block md:w-5/12 lg:w-1/3 md:p-6 lg:p-8 xl:p-12 flex justify-center items-start">
+        <div className="hidden md:flex md:w-5/12 lg:w-1/3 md:p-6 lg:p-8 xl:p-12 justify-center items-start">
           <div className="sticky top-24 self-start">
             <div className="w-[280px] md:w-[320px] lg:w-[400px] xl:w-[500px]">
               <div className="h-[420px] md:h-[480px] lg:h-[540px] xl:h-[600px]">

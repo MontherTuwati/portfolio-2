@@ -66,7 +66,7 @@ export default function HeroSection() {
         </div>
 
         {/* Statistics Section */}
-        <div className="flex flex-col sm:flex-row justify-start items-start gap-4 sm:gap-6 md:gap-6 lg:gap-8 xl:gap-12 mb-16">
+        <div className="flex flex-row justify-start items-start gap-3 sm:gap-6 md:gap-6 lg:gap-8 xl:gap-12 mb-16">
           <div className="text-left">
             <div className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-2">
               +<CountUp

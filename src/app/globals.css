@@ -121,6 +121,16 @@
   padding: 2em;
   background: transparent;
   z-index: 20;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* Blur effect only on mobile */
+@media (max-width: 767px) {
+  .staggered-menu-header.scrolled {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background-color: rgba(26, 26, 26, 0.3);
+  }
 }
 
 .staggered-menu-header > * {
@@ -452,6 +462,14 @@
 
   .staggered-menu-wrapper[data-open] .sm-logo-img {
     filter: invert(100%);
+  }
+  
+  .sm-panel-item {
+    font-size: 3.3rem;
+  }
+  
+  .sm-socials-list {
+    flex-wrap: nowrap;
   }
 }
 

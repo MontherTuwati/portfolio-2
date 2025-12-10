@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import '../../app/globals.css';
 
@@ -52,7 +52,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   onItemClick
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const openRef = useRef(false);
+  const headerRef = useRef<HTMLElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const preLayersRef = useRef<HTMLDivElement | null>(null);
   const preLayerElsRef = useRef<HTMLElement[]>([]);
@@ -97,6 +99,40 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     });
     return () => ctx.revert();
   }, [menuButtonColor, position]);
+
+  // Scroll detection for blur effect (disabled when menu is open)
+  useEffect(() => {
+    if (!isFixed) return;
+
+    const handleScroll = () => {
+      // Don't apply blur if menu is open
+      if (open) {
+        setIsScrolled(false);
+        return;
+      }
+      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+      setIsScrolled(scrollY > 0);
+    };
+
+    // Use requestAnimationFrame for smoother performance with Lenis
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    handleScroll(); // Check initial scroll position
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, [isFixed, open]);
 
   const buildOpenTimeline = useCallback(() => {
     const panel = panelRef.current;
@@ -350,7 +386,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           return arr.map((c, i) => <div key={i} className="sm-prelayer" style={{ background: c }} />);
         })()}
       </div>
-      <header className="staggered-menu-header" aria-label="Main navigation header">
+      <header 
+        ref={headerRef}
+        className={`staggered-menu-header ${isScrolled ? 'scrolled' : ''}`}
+        aria-label="Main navigation header"
+      >
         <div className="sm-logo" aria-label="Logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
