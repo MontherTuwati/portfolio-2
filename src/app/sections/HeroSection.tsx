@@ -85,7 +85,7 @@ export default function HeroSection() {
             <div className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-2">
               +<CountUp
                 from={0}
-                to={26}
+                to={21}
                 direction="up"
                 duration={2}
                 className="count-up-text"
@@ -99,7 +99,7 @@ export default function HeroSection() {
             <div className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-2">
               +<CountUp
                 from={0}
-                to={43}
+                to={13}
                 direction="up"
                 duration={2.5}
                 className="count-up-text"
