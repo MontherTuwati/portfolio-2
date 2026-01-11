@@ -487,12 +487,6 @@
   inside the card divs.
 */
 
-/* Prevent horizontal overflow on Mac browsers */
-html {
-  overflow-x: hidden;
-  width: 100%;
-}
-
 /* Keep your existing body styles and add position relative */
 body {
   /* These will now use the dark colors defined in :root */
