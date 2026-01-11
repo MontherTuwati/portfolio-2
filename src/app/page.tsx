@@ -22,7 +22,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen font-poppins text-white pt-20 md:pt-0 overflow-x-hidden">
+    <main className="min-h-screen font-poppins text-white pt-20 md:pt-0">
       {/* Two Column Layout - Only for main content sections */}
       <div className="flex flex-col md:flex-row">
         {/* Left Column - TiltedCard (only for main sections) */}
