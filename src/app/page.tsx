@@ -22,21 +22,21 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen font-poppins text-white pt-20 md:pt-0">
+    <main className="min-h-screen font-poppins text-white pt-20 md:pt-0 overflow-x-hidden">
       {/* Two Column Layout - Only for main content sections */}
       <div className="flex flex-col md:flex-row">
         {/* Left Column - TiltedCard (only for main sections) */}
-        <div className="hidden md:flex md:w-5/12 lg:w-1/3 md:p-6 lg:p-8 xl:p-12 justify-center items-start">
-          <div className="sticky top-24 self-start">
-            <div className="w-[280px] md:w-[320px] lg:w-[400px] xl:w-[500px]">
-              <div className="h-[420px] md:h-[480px] lg:h-[540px] xl:h-[600px]">
+        <div className="hidden md:flex md:w-5/12 lg:w-1/3 md:pl-10 lg:pl-16 xl:pl-20 md:pr-6 lg:pr-8 xl:pr-12 md:pt-6 lg:pt-8 xl:pt-12 justify-center items-start min-w-0">
+          <div className="sticky top-24 self-start flex justify-center w-full">
+            <div className="w-[320px] md:w-[360px] lg:w-[450px] xl:w-[580px]">
+              <div className="h-[420px] md:h-[480px] lg:h-[540px] xl:h-[680px]">
                 <TiltedCard
                   imageSrc="/photos/tiltedcard.svg"
                   altText="MontherTuwati"
                   captionText="Monther Tuwati"
                   containerHeight="100%"
-                  containerWidth="100%"
-                  imageHeight="116.67%"
+                  containerWidth="120%"
+                  imageHeight="100%"
                   imageWidth="100%"
                 rotateAmplitude={10}
                 scaleOnHover={1.1}

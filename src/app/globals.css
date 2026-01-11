@@ -96,7 +96,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh; /* Use dynamic viewport height for better Mac browser compatibility */
   z-index: 40;
   overflow: hidden;
   pointer-events: none;
@@ -487,6 +487,12 @@
   inside the card divs.
 */
 
+/* Prevent horizontal overflow on Mac browsers */
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 /* Keep your existing body styles and add position relative */
 body {
   /* These will now use the dark colors defined in :root */
@@ -494,6 +500,8 @@ body {
   position: relative; /* Added for positioning context if needed */
   background-color: #1A1A1A;
   color: #ffffff;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Add the noise effect pseudo-element */
@@ -505,7 +513,7 @@ body::after {
   right: 0;
   bottom: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh; /* Use dynamic viewport height for better Mac browser compatibility */
   z-index: -1; /* Place it behind the main content */
 
   /* --- Noise Effect using SVG Filter --- */
