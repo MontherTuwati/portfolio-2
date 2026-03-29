@@ -160,47 +160,6 @@ const PROJECT_CONTENT = [
     ],
   },
   {
-    title: 'Marketplace SaaS',
-    description:
-      'Ticketr is a real-time event ticketing marketplace platform built with Next.js 15, Convex, Clerk, and Stripe Connect. Features include real-time ticket availability tracking, smart queuing system with position updates, time-limited ticket offers, secure payment processing with Stripe Connect for direct organizer payments, digital tickets with QR codes, automatic refunds for cancelled events, real-time sales monitoring, automated queue management, event analytics, and bulk refund processing. Built as a SaaS platform enabling event organizers to sell tickets directly to attendees.',
-    techStack: [
-      'Next.js 15',
-      'Convex',
-      'Clerk',
-      'Stripe Connect',
-      'TypeScript',
-      'TailwindCSS',
-      'shadcn/ui',
-      'React Hook Form',
-      'Zod',
-    ],
-    date: '2023',
-    images: [
-      {
-        src: '/project-imgs/image-coming-soon-placeholder.png',
-        alt: 'Marketplace SaaS - Coming Soon',
-      },
-    ],
-  },
-  {
-    title: 'Finance Tracker',
-    description:
-      'Finance Tracker is a desktop application for tracking personal finances built with Python and Tkinter. Features include dashboard overview with monthly progress and expense trends, category-wise expense visualization with color-coded cards, complete transaction history with search functionality, easy transaction entry form, upcoming transactions tracking for planned future expenses, interactive charts showing spending patterns over time, and local SQLite database storage for data privacy.',
-    techStack: [
-      'Python',
-      'Tkinter',
-      'SQLite',
-      'Matplotlib',
-    ],
-    date: '2022',
-    images: [
-      {
-        src: '/project-imgs/image-coming-soon-placeholder.png',
-        alt: 'Finance Tracker - Coming Soon',
-      },
-    ],
-  },
-  {
     title: 'Store POS System',
     description:
       "StorePOS is a sleek, offline-first desktop Point of Sale application built with Electron and Node.js. Designed for small to medium-sized retail environments, it offers essential sales functionality including multi-terminal networking, receipt printing with customizable layouts, barcode scanning, product and category management, inventory control, open tabs, customer database, transaction history with advanced filters, and staff accounts with permission levels.",
@@ -524,21 +483,9 @@ export const data = [
     content: <ProjectContent project={{ title: 'School Student Info System' }} />,
   },
   {
-    category: 'SaaS Platform',
-    title: 'Marketplace SaaS',
-    src: '/project-imgs/image-coming-soon-placeholder.png',
-    content: <ProjectContent project={{ title: 'Marketplace SaaS' }} />,
-  },
-  {
     category: 'Business Tool',
     title: 'Store POS System',
     src: '/project-imgs/pos/pos-thumbnail.png',
     content: <ProjectContent project={{ title: 'Store POS System' }} />,
-  },
-  {
-    category: 'Finance App',
-    title: 'Finance Tracker',
-    src: '/project-imgs/image-coming-soon-placeholder.png',
-    content: <ProjectContent project={{ title: 'Finance Tracker' }} />,
   },
 ];
