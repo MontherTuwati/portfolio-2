@@ -23,9 +23,9 @@ export default function Home() {
 
   return (
     <main className="min-h-screen font-poppins text-white pt-20 md:pt-0">
-      {/* Two Column Layout - Only for main content sections */}
+      {/* Two Column Layout - Only for Hero and About sections */}
       <div className="flex flex-col md:flex-row">
-        {/* Left Column - TiltedCard (only for main sections) */}
+        {/* Left Column - TiltedCard (sticky within this container only) */}
         <div className="hidden md:flex md:w-5/12 lg:w-1/3 md:pl-10 lg:pl-16 xl:pl-20 md:pr-6 lg:pr-8 xl:pr-12 md:pt-6 lg:pt-8 xl:pt-12 justify-center items-start min-w-0">
           <div className="sticky top-24 self-start flex justify-center w-full">
             <div className="w-[320px] md:w-[360px] lg:w-[450px] xl:w-[580px]">
@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Column - All Content Sections */}
+        {/* Right Column - Hero and About only */}
         <div className="w-full md:w-7/12 lg:w-2/3 p-4 md:p-6 lg:p-8 xl:p-12">
           <div id="home">
             <HeroSection />
@@ -62,18 +62,22 @@ export default function Home() {
           <div id="about">
             <AboutSection />
           </div>
-          <div id="experience">
-            <ExperienceTimeline />
-          </div>
-          <div id="projects">
-            <AllProjects />
-          </div>
-          <div id="contact">
-            <ContactSection />
-          </div>
         </div>
       </div>
-      
+
+      {/* Full Width - Remaining sections after About */}
+      <div className="p-4 md:p-6 lg:p-8 xl:p-12">
+        <div id="experience">
+          <ExperienceTimeline />
+        </div>
+        <div id="projects">
+          <AllProjects />
+        </div>
+        <div id="contact">
+          <ContactSection />
+        </div>
+      </div>
+
       {/* Full Width Footer */}
       <FooterSection />
     </main>
