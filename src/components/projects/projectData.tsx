@@ -66,22 +66,48 @@ const PROJECT_CONTENT = [
       'Node.js',
     ],
     date: '2025',
+    links: [
+      {
+        name: 'Website',
+        url: 'https://anti-scamurai.vercel.app/',
+      },
+    ],
     images: [
       {
         src: '/project-imgs/antiscamurai/antiscamurai-thumbnail.png',
         alt: 'AntiScamurai thumbnail',
       },
       {
-        src: '/project-imgs/antiscamurai/anticcamurai.jpg',
-        alt: 'AntiScamurai',
+        src: '/project-imgs/antiscamurai/site-hero.png',
+        alt: 'AntiScamurai site hero',
       },
       {
-        src: '/project-imgs/antiscamurai/antiscamurai-1.jpg',
-        alt: 'AntiScamurai',
+        src: '/project-imgs/antiscamurai/feat1.png',
+        alt: 'AntiScamurai feature 1',
       },
       {
-        src: '/project-imgs/antiscamurai/antiscamurai-2.jpg',
-        alt: 'AntiScamurai',
+        src: '/project-imgs/antiscamurai/feat2.png',
+        alt: 'AntiScamurai feature 2',
+      },
+      {
+        src: '/project-imgs/antiscamurai/feat3.png',
+        alt: 'AntiScamurai feature 3',
+      },
+      {
+        src: '/project-imgs/antiscamurai/feat4.png',
+        alt: 'AntiScamurai feature 4',
+      },
+      {
+        src: '/project-imgs/antiscamurai/feat5.png',
+        alt: 'AntiScamurai feature 5',
+      },
+      {
+        src: '/project-imgs/antiscamurai/feat6.png',
+        alt: 'AntiScamurai feature 6',
+      },
+      {
+        src: '/project-imgs/antiscamurai/feat7.png',
+        alt: 'AntiScamurai feature 7',
       },
     ],
   },
