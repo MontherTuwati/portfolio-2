@@ -5,6 +5,22 @@ import Image from 'next/image';
 // Experience sorted by date, newest first (reverse chronological)
 const experiences = [
   {
+    id: 6,
+    title: 'Lead Product Engineer (Founder)',
+    company: 'CatchaBite',
+    year: 'May 2023 – Present',
+    description: 'Founded and led product engineering for a food delivery platform, driving end-to-end development from concept to launch, architecting scalable systems, and managing cross-functional teams to deliver a seamless experience for customers and vendors.',
+    logo: '/exp_logos/catchabite-logo.png',
+  },
+  {
+    id: 5,
+    title: 'Web Developer Intern',
+    company: 'GAO RFID Inc.',
+    year: 'May 2025 – Sept. 2025',
+    description: 'Developed and enhanced web-based interfaces for RFID tracking and management systems, collaborating with engineering teams to implement responsive, data-driven features using modern front-end technologies.',
+    logo: '/exp_logos/gao.png',
+  },
+  {
     id: 4,
     title: 'Full Stack Developer',
     company: "Joe's Auto Body",
@@ -21,20 +37,20 @@ const experiences = [
     logo: '/exp_logos/sab-uni.svg',
   },
   {
-    id: 2,
-    title: 'Intern Software Developer',
-    company: 'Ozon Telecom',
-    year: 'May 2023 – Dec. 2023',
-    description: 'Contributed to the development of a user app with React, Node.js, NestJS, MongoDB, and Redis, centralizing employee management and attendance tracking.',
-    logo: '/exp_logos/ozon-logo.svg',
-  },
-  {
     id: 1,
-    title: 'Junior Data Analyst / Core Technician',
+    title: 'Junior Data Engineer',
     company: 'McEwen Mining Inc.',
     year: 'Sept. 2022 – May 2023',
     description: 'Refactored core scanner workflow using Python, automating data batch processing and centralizing geological scan data for distributed analysis.',
     logo: '/exp_logos/mcewen-logo.svg',
+  },
+  {
+    id: 2,
+    title: 'Software Engineer Intern',
+    company: 'Ozon Telecom',
+    year: 'Sept. 2021 – Jan. 2022',
+    description: 'Contributed to the development of a user app with React, Node.js, NestJS, MongoDB, and Redis, centralizing employee management and attendance tracking.',
+    logo: '/exp_logos/ozon-logo.svg',
   },
 ];
 
