@@ -103,6 +103,7 @@ export default function HeroSection() {
         <p className="text-orange-400 text-sm sm:text-base md:text-lg font-medium tracking-widest uppercase">
           Software Engineer &nbsp;/&nbsp; Founder
         </p>
+        <div className="w-10 h-px bg-orange-500 flex-shrink-0" />
       </motion.div>
 
       {/* Tagline */}
