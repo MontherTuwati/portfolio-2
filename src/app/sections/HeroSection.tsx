@@ -47,7 +47,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen pt-20 md:pt-0">
+    <div className="flex flex-col md:flex-row min-h-screen">
 
       {/* Right Column — TiltedCard */}
       <div className="hidden md:block md:w-[32%] lg:w-[34%] xl:w-[36%] order-last sticky top-0 h-screen overflow-hidden">
@@ -68,7 +68,7 @@ export default function HeroSection() {
       </div>
 
       {/* Left Column — Hero Content */}
-      <div className="flex-1 flex flex-col justify-center p-4 md:p-6 lg:p-8 xl:p-12">
+      <div className="flex-1 flex flex-col justify-center p-4 pt-24 md:p-6 md:pt-28 lg:p-8 lg:pt-28 xl:p-12 xl:pt-32">
 
       {/* Greeting */}
       <motion.p
