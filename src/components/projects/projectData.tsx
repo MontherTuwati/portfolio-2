@@ -71,6 +71,10 @@ const PROJECT_CONTENT = [
         name: 'Website',
         url: 'https://anti-scamurai.vercel.app/',
       },
+      {
+        name: 'GitHub',
+        url: 'https://github.com/MontherTuwati/antiscamurai-showcase',
+      },
     ],
     images: [
       {
