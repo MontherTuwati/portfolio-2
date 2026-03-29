@@ -5,12 +5,6 @@ import CountUp from "@/components/ui/TextAnimations/CountUp/CountUp";
 import { motion, AnimatePresence } from "framer-motion";
 import TiltedCard from "@/components/ui/TiltedCard";
 
-const socialLinks = [
-  { icon: 'fas fa-envelope', href: 'mailto:monthertuwati@gmail.com', label: 'Email' },
-  { icon: 'fab fa-github', href: 'https://github.com/monthertuwati', label: 'GitHub' },
-  { icon: 'fab fa-linkedin-in', href: 'https://www.linkedin.com/in/monthertuwati/', label: 'LinkedIn' },
-];
-
 const stats = [
   { value: 3, label: 'YEARS OF\nEXPERIENCE', duration: 1.5 },
   { value: 21, label: 'PROJECTS\nCOMPLETED', duration: 2 },
@@ -55,31 +49,22 @@ export default function HeroSection() {
   return (
     <div className="flex flex-col md:flex-row min-h-screen pt-20 md:pt-0">
 
-      {/* Right Column — TiltedCard (desktop only, sticky) */}
-      <div className="hidden md:flex md:w-5/12 lg:w-[42%] xl:w-2/5 order-last flex-col justify-center items-center pr-6 lg:pr-10 xl:pr-16 py-12">
-        <div className="sticky top-24 self-start flex justify-center w-full">
-          <div className="w-[300px] lg:w-[400px] xl:w-[500px] h-[400px] lg:h-[520px] xl:h-[640px]">
-            <TiltedCard
-              imageSrc="/photos/tiltedcard.svg"
-              altText="Monther Tuwati"
-              captionText="Monther Tuwati"
-              containerHeight="100%"
-              containerWidth="110%"
-              imageHeight="100%"
-              imageWidth="100%"
-              rotateAmplitude={10}
-              scaleOnHover={1.08}
-              showMobileWarning={false}
-              showTooltip={false}
-              displayOverlayContent={true}
-              overlayContent={
-                <p className="bg-transparent px-3 py-1.5 md:px-4 md:py-2 border border-dashed border-white rounded-lg font-bold text-sm md:text-base lg:text-lg text-white absolute top-4 right-4 md:top-5 md:right-5" style={{ opacity: 0.9 }}>
-                  Monther<br />Tuwati
-                </p>
-              }
-            />
-          </div>
-        </div>
+      {/* Right Column — TiltedCard */}
+      <div className="hidden md:block md:w-[32%] lg:w-[34%] xl:w-[36%] order-last sticky top-0 h-screen overflow-hidden">
+        <TiltedCard
+          imageSrc="/photos/tiltedcard.svg"
+          altText="Monther Tuwati"
+          captionText="Monther Tuwati"
+          containerHeight="100%"
+          containerWidth="100%"
+          imageHeight="100%"
+          imageWidth="100%"
+          rotateAmplitude={8}
+          scaleOnHover={1.03}
+          showMobileWarning={false}
+          showTooltip={false}
+          displayOverlayContent={false}
+        />
       </div>
 
       {/* Left Column — Hero Content */}
@@ -122,7 +107,7 @@ export default function HeroSection() {
 
       {/* Tagline */}
       <motion.p
-        className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-xl mb-10"
+        className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-xl mb-16"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.45 }}
@@ -131,42 +116,6 @@ export default function HeroSection() {
         <br className="hidden sm:block" />
         Turning ideas into scalable, maintainable solutions.
       </motion.p>
-
-      {/* Social icons + Download CV */}
-      <motion.div
-        className="flex items-center gap-3 mb-16 flex-wrap"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.55 }}
-      >
-        {socialLinks.map((s) => (
-          <motion.a
-            key={s.label}
-            href={s.href}
-            target={s.href.startsWith('mailto') ? undefined : '_blank'}
-            rel="noopener noreferrer"
-            aria-label={s.label}
-            className="w-11 h-11 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:border-orange-500 hover:text-orange-500 transition-all duration-300"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <i className={`${s.icon} text-sm`} />
-          </motion.a>
-        ))}
-
-        <div className="w-px h-8 bg-gray-700 mx-1" />
-
-        <motion.a
-          href="/cv/Monther_CV.pdf"
-          download
-          className="flex items-center gap-2 px-5 py-2.5 bg-orange-500 text-white rounded-full font-semibold text-sm hover:bg-orange-400 transition-all duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <i className="fas fa-download text-xs" />
-          Download CV
-        </motion.a>
-      </motion.div>
 
       {/* Stats */}
       <motion.div

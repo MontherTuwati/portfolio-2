@@ -120,10 +120,10 @@ export default function TiltedCard({
 					scale,
 				}}
 			>
-				<motion.img
-					src={imageSrc}
-					alt={altText}
-					className="absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)]"
+			<motion.img
+				src={imageSrc}
+				alt={altText}
+				className="absolute top-0 left-0 object-cover object-top rounded-[15px] will-change-transform [transform:translateZ(0)]"
 					style={{
 						width: imageWidth === "100%" ? "100%" : imageWidth,
 						height: imageHeight === "100%" ? "100%" : imageHeight,
