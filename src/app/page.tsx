@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import HeroSection from "./sections/HeroSection";
 import AboutSection from "./sections/AboutSection";
+import TechnologiesSection from "./sections/TechnologiesSection";
 import ExperienceTimeline from "./sections/ExperienceTimeline";
 import AllProjects from "./sections/ProjectsSection";
 import ContactSection from "./sections/ContactSection";
@@ -26,8 +27,12 @@ export default function Home() {
         <HeroSection />
       </div>
 
-      <div id="about" className="p-4 md:p-6 lg:p-8 xl:p-12">
-        <AboutSection />
+      <AboutSection />
+
+      <div className="p-4 md:p-6 lg:p-8 xl:p-12">
+        <div id="technologies">
+          <TechnologiesSection />
+        </div>
       </div>
 
       <div className="p-4 md:p-6 lg:p-8 xl:p-12">

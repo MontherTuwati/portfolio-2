@@ -11,6 +11,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home section', link: 'home' },
   { label: 'About', ariaLabel: 'Learn about Monther', link: 'about' },
+  { label: 'Stack', ariaLabel: 'View technologies and tools', link: 'technologies' },
   { label: 'Experience', ariaLabel: 'View work experience', link: 'experience' },
   { label: 'Projects', ariaLabel: 'See portfolio projects', link: 'projects' },
   { label: 'Contact', ariaLabel: 'Get in touch', link: 'contact' }
