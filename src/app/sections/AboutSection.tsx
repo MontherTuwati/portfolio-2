@@ -11,10 +11,9 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative w-full min-h-[115dvh] scroll-mt-0 lg:h-[115dvh] lg:min-h-0"
+      className="relative w-full scroll-mt-0 max-lg:min-h-0 lg:h-[115dvh] lg:min-h-0"
       aria-labelledby="about-heading"
     >
-      
       <div className="grid w-full grid-cols-1 grid-rows-[64dvh_auto] sm:grid-rows-[66dvh_auto] lg:h-full lg:min-h-0 lg:grid-cols-2 lg:grid-rows-1">
         {/* Left — photo */}
         <div className="relative h-full min-h-0 min-w-0 overflow-hidden bg-neutral-950 lg:min-h-0">
@@ -42,7 +41,7 @@ export default function AboutSection() {
           )}
         </div>
 
-        <div className="relative flex min-h-0 overflow-y-auto overscroll-y-contain bg-black lg:h-full">
+        <div className="relative min-h-0 bg-black max-lg:overflow-visible lg:h-full lg:overflow-y-auto lg:overscroll-y-contain">
           <div className="flex w-full max-w-2xl flex-col justify-start px-6 pb-20 pt-12 sm:px-10 sm:pb-24 sm:pt-14 md:px-12 lg:mx-0 lg:max-w-none lg:min-h-full lg:justify-center lg:px-14 lg:pb-24 lg:pt-16 xl:px-16">
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-orange-400 sm:mb-6 sm:text-sm sm:tracking-[0.22em]">
               About
