@@ -15,7 +15,7 @@ export default function AboutSection() {
       aria-labelledby="about-heading"
     >
       <div className="grid w-full grid-cols-1 grid-rows-[64dvh_auto] sm:grid-rows-[66dvh_auto] lg:h-full lg:min-h-0 lg:grid-cols-2 lg:grid-rows-1">
-        {/* Left — photo */}
+        {/* Left - photo */}
         <div className="relative h-full min-h-0 min-w-0 overflow-hidden bg-neutral-950 lg:min-h-0">
           {!portraitFailed ? (
             <Image
@@ -51,26 +51,19 @@ export default function AboutSection() {
               className="mb-8 max-w-[22ch] text-4xl font-bold uppercase leading-[1.06] tracking-tight text-white sm:max-w-none sm:mb-10 sm:text-5xl sm:leading-[1.05] md:text-6xl md:leading-[1.04] lg:mb-12 lg:text-6xl lg:leading-[1.03] xl:text-7xl"
             >
               <span className="text-white">The </span>
-              <span className="text-orange-400">&apos;why&apos;</span>
+              <span className="text-orange-400">&apos;curiosity&apos;</span>
               <span className="text-white">
                 {' '}
-                behind
-                <br className="hidden sm:block" /> who I am
+                that built me
               </span>
             </h2>
 
             <div className="max-w-2xl space-y-6 text-left text-base leading-relaxed text-neutral-200 sm:space-y-7 sm:text-lg sm:leading-relaxed lg:text-xl lg:leading-relaxed">
               <p>
-                I care about understanding the reasoning behind decisions—whether that is product,
-                architecture, or a tricky bug. That mindset pushed me from early mobile work with
-                Flutter and Firebase into web development with Next.js, React, and Tailwind, always
-                chasing clarity and maintainable systems.
+              Born and raised in Canada, I've been fascinated by technology for as long as I can remember. As a kid, I was the one taking apart gadgets, experimenting with code, and trying to understand how software works behind the scenes. That curiosity eventually turned into a passion for building modern, user-focused applications that solve real problems.
               </p>
               <p>
-                Alongside engineering, I create content: what started as a side project grew into work
-                for other creators, with campaigns reaching around fifteen million people within ninety
-                days. I bring that same storytelling instinct to how I explain technical work and
-                collaborate with teams.
+              Today, I focus on creating scalable web and mobile experiences using technologies like Next.js, React, React Native, Flutter, Firebase, and Tailwind CSS. I care deeply about writing maintainable systems, designing intuitive user experiences, and understanding the reasoning behind technical and product decisions. I strive to not just make things work, but make them work well.
               </p>
             </div>
           </div>
